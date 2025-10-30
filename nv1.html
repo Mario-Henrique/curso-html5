@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.: WorldScaleSD - Iniciando com HTML :.</title>
+    <link rel="stylesheet" href="styles/nv1.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>HTML</h1>
+            <p>É um acrônimo para <strong class="acronym">Hyper Text Markup Language</strong>. Não é uma linguagem de programação e sim uma linguagem de hiper texto.</p>
+            <p>Por ser uma linguagem de marcação, HTML usa essêncialmente marcações ou mais conhecido como <strong>Tags</strong>.</p>
+            <p>Você pode reconhecer as tags por estarem entre os sinais de <strong><</strong> <samp>(menor)</samp> e <strong>></strong> <samp>(maior)</samp>. A maior parte delas inicia <strong><></strong> e termina <strong>&lt;/&gt;</strong>. Mas nem todas terminam dessa forma.</p>
+            <ul>
+                Exemplos de tag com fechamento:
+                <li><strong>&lt;html&gt;&lt;/html&gt;</strong> - Inicia a construção de um documento HTML.</li>
+                <li><strong>&lt;head&gt;&lt;/head&gt;</strong> - Cabeçalho do documento.</li>
+                <li><strong>&lt;body&gt;&lt;/body&gt;</strong> - Corpo do documento.</li>
+                <li><strong>&lt;div&gt;&lt;/div&gt;</strong> - Cria um container, uma caixa onde você pode agrupar elementos.</li>
+                <li><strong>&lt;h1&gt;&lt;/h1&gt;</strong> - Geralmente usado para títulos. Coloca uma formatação no texto como tamanho e negrito sendo h1 o maior tamanho e diminuindo até o <strong>h6</strong>. Também é usado por buscadores para identificar o título da página.</li>
+                <li><strong>&lt;section&gt;&lt;/section&gt;</strong> - Similar ao div, cria uma seção na página.</li>
+                <li><strong>&lt;strong&gt;&lt;/strong&gt;</strong> - Deixa o texto em negrito. Dá o significado que a palavra tem destaque, força.</li>
+            </ul>
+            <ul>
+                Exemplos de tag sem fechamento:
+                <li><strong>&lt;br&gt;</strong> - Insere uma quebra de linha. É uma tag "vazia", usada para forçar uma nova linha sem iniciar um novo parágrafo.</li>
+                <li><strong>&lt;hr&gt;</strong> - Cria uma linha horizontal de separação.</li>
+                <li><strong>&lt;link&gt;</strong> - Define a relação entre o documento atual e um recurso externo, como uma folha de estilos CSS.</li>
+                <li><strong>&lt;img&gt;</strong> - Usada para exibir uma imagem. Precisa dos atributos src (origem da imagem) e alt (texto alternativo).</li>
+                <li><strong>&lt;input&gt;</strong> - Cria campos de entrada em formulários, como caixas de texto ou botões.</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Estrutura de uma tag</h1>
+            <p>Como já vimos uma tag HTML é um elemento que marca e organiza o conteúdo de uma página web, informando ao navegador como formatar o texto e exibir elementos como títulos, parágrafos e imagens. Elas funcionam como "etiquetas" que delimitam o início e o fim de uma estrutura, sempre contidas entre os sinais de menor <strong><</strong> e maior <strong>></strong>.</p>
+            <p>Algumas tags também possuem atributos que podem modificar ou definir seu uso. todo atributo virá após o nome da tag e seu valor será definido após o sinal de igual.
+                <span class="exemplo">
+                    &lt;img <strong>src="c:\imagem.jpg"</strong>&gt;, onde <strong>src</strong> é o atributo e seu valor é <strong>c:\imagem.jpg</strong>.
+                </span>
+            </p>
+        </section>
+        <section>
+            <h1>Estrutura básica de um documento HTML</h1>
+        <pre class="code-block">
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="pt-br"&gt;
+               .
+               .
+               .
+            &lt;/html&gt;
+        </code>
+        </pre>
+            <p>Na primeira linha <samp>&lt;!DOCTYPE html&gt;</samp> é definido o tipo de documento que nesse caso é html.</p>
+            <p>Já a segunda linha <samp>&lt;html lang="pt-br"&gt;</samp> é iniciada a tag <strong>html</strong> com o atributo que define a linguagem que essa página será escrita.</p>
+            <p>Dentro das tags <strong>&lt;html&gt;</strong> e <strong>&lt;/html&gt;</strong> vamos usar mais duas que são essênciais, que são, <strong>&lt;head&gt;</strong> que indica o cabeçalho da página e onde são definidas algumas configurações do documento e <strong>&lt;body&gt;</strong> que é o corpo da página e onde estará todo seu conteúdo.</p>
+            <p>E para definir visualmente o que está dentro de que, ou seja, quem faz parte de quem, usamos uma técnica chamada <strong>identação</strong>, que nada mais é do que afastar o texto da margem usando a tecla <strong>TAB</strong>. Isso ajuda a tornar mais legível e facíl de compreender o documento.</p>
+            <p>Um documento sem identação ficaria dessa forma:</p>
+        <pre class="code-block">
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="pt-br"&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Título do documento&lt;/&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+        </pre>
+            <p>Então adicionando a técnica, essas tags ficam assim:</p>
+        <pre class="code-block">
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="pt-br"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title&gt;Título do documento&lt;/&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+        </pre>
+            <p>
+                Visualmente você consegue perceber o que chamamos de <strong>agrupamento de tags</strong>, que nada mais é do que colocar uma tag dentro de outra. O agrupamento desempenha um papel vital em nossa página da web porque ajuda o desenvolvedor <em>(e os buscadores)</em> a segmentar o conteúdo, o que torna mais fácil de posicionar, estilizar ou manipular o documento.
+            </p>
+            <p>Você consegue perceber que adicionamos mais do que apenas o <strong>&lt;head&gt;</strong> e <strong>&lt;body&gt;</strong>. Então vamos a explicação:</p>
+            <ul>
+                <li><strong>&lt;meta&gt;</strong> - As meta tags são metadados que auxiliam mecânismos de busca e configurações do documento. São dados que fornecem informações sobre o documento HTML, mas que não são exibidos diretamente na página e sempre virão dentro da tag <strong>&lt;head&gt;</strong>.
+                    <p>Nosso primeiro meta na linha 4 usa o atributo <strong>charset</strong> que indica o conjunto de caracteres que será usado, neste caso o <strong>UTF-8</strong> que é responsável por caracteres com acento e ç.</p>
+                    <p>O segundo meta possui dois atributos, <strong>name</strong> responsável por identificar o tipo de metadado e <strong>content</strong> que é o valor ou conteúdo do metadado.</p>
+                    <p>Em html5 existem nomes padrão de metadados, alguns deles são:</p>
+                    <ul>
+                        <li><strong>viewport</strong> - Indica o valor inicial do viewport <samp>(área visível da janela do navegador onde o conteúdo da página é exibido).</samp> É comum em sites responsivos, que são construidos para serem legíveis independente do dispositivo que o acesse. Seu conteúdo mais usado é: <strong>width=device-width, initial-scale=1.0</strong> que possuem dois atributos que são <strong>width</strong>: que define a largura do documento e tem o valor <strong>device-width</strong> que significa largura do dispositivo. O outro atributo <strong>initial-scale</strong>: representa o zoom inicial quando a página é carregada pela primeira vez. O valor <strong>1.0</strong> é o nível de zoom normal.</li>
+                        <li><strong>application-name</strong> - Define o nome do aplicativo web em execução. Se a página não for um aplicativo web, este nome de metadados não deve ser usado.</li>
+                        <li><strong>author</strong> - Define o nome do autor do documento.</li>
+                        <li><strong>description</strong> - Contém um resumo curto e preciso do conteúdo da página.</li>
+                        <li><strong>keywords</strong> - Define palavras-chave separadas por vírgula associadas ao conteúdo da página onde os buscadores usam para associar sua página a busca dos usuários.</li>
+                        <li><strong>publisher</strong> - Define o nome do editor, a pessoa que cria/edita os textos da página.</li>
+                    </ul>
+                </li>
+                <li><strong>&lt;title&gt;</strong> - Define um título para o documento. Este aparece nas abas ou barra de título dos navegadores.</li>
+            </ul>
+        </section>
+    </main>
+    
+    <script src="js/menu.js" defer></script>
+</body>
+</html>

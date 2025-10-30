@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.: WorldScaleSD - Curso HTML5 :.</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>Jornada HTML5</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#iniciante">Nível Iniciante</a></li>
+                <li><a href="#intermediario">Nível Intermediário</a></li>
+                <li><a href="#avancado">Nível Avançado</a></li>
+                <li><a href="#pro">Nível Profissional</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero" aria-labelledby="hero-title">
+            <h2 id="hero-title">O Caminho para o Domínio do HTML5</h2>
+            <p>Explore o mapa completo do conhecimento, estruturado para guiar você do leigo ao desenvolvedor web profissional.</p>
+        </section>
+
+        <section class="knowledge-map" aria-labelledby="map-heading">
+            <h2 id="map-heading">Jornada de Aprendizado HTML5</h2>
+            
+            <article id="historia" class="module stage-0">
+                <a href="historia.html">
+                    <h3>0. Introdução: História e Evolução da Web</h3>
+                </a>
+                <p>Compreenda como a linguagem surgiu, a transição do HTML 4 para o XHTML e o estabelecimento do HTML5 como o padrão <strong>WHATWG</strong> <em>(Living Standard)</em>.</p>
+                <div class="tags">
+                    <span>#SGML</span>
+                    <span>#W3C</span>
+                    <span>#WHATWG</span>
+                    <span>#PadrõesWeb</span>
+                </div>
+            </article>
+
+            <article id="iniciante" class="module stage-1">
+                <a href="nv1.html">
+                    <h3>1. Nível Iniciante: A Estrutura Base</h3>
+                </a>
+                <p>Aprenda a sintaxe fundamental. Entenda a diferença entre o <strong>head</strong> (metadados) e o <strong>body</strong> (conteúdo visível). Criação de títulos, parágrafos, e listas básicas.</p>
+                <ul class="key-concepts">
+                    <li>Sintaxe: Tags, Elementos e Atributos</li>
+                    <li>Estrutura de um Documento (<code>&lt;!DOCTYPE html&gt;</code>)</li>
+                    <li>Tags de Conteúdo Básico (<code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>)</li>
+                    <li>Comentários em HTML</li>
+                </ul>
+            </article>
+
+            <article id="intermediario" class="module stage-2">
+                <h3>2. Nível Intermediário: Layout e Semântica</h3>
+                <p>Domínio dos elementos estruturais do HTML5. Utilização de <strong>Divs</strong> vs. Tags Semânticas. Introdução a formulários e como eles interagem com o usuário.</p>
+                <div class="semantic-elements">
+                    <span><code>&lt;header&gt;</code></span>
+                    <span><code>&lt;nav&gt;</code></span>
+                    <span><code>&lt;section&gt;</code></span>
+                    <span><code>&lt;article&gt;</code></span>
+                    <span>Formulários (<code>&lt;form&gt;</code>)</span>
+                    <span>Tabelas (<code>&lt;table&gt;</code>)</span>
+                </div>
+            </article>
+
+            <article id="avancado" class="module stage-3">
+                <h3>3. Nível Avançado: Mídia, Acessibilidade e Validação</h3>
+                <p>Implementação de recursos ricos sem plugins. O uso de atributos <strong>ARIA</strong> para acessibilidade. Criação de formulários complexos com validação nativa e novos tipos de `input`.</p>
+                <ul class="key-features">
+                    <li>Mídia (<code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>) e `track`</li>
+                    <li>Acessibilidade (Atributos `alt`, `lang`, `role` e <strong>ARIA</strong>)</li>
+                    <li>Novos Tipos de `input` (Date, Color, Range)</li>
+                    <li>Elemento `&lt;figure&gt;` e `&lt;figcaption&gt;`</li>
+                </ul>
+            </article>
+            
+            <article id="pro" class="module stage-4">
+                <h3>4. Nível Profissional: APIs e Performance</h3>
+                <p>Exploração das APIs nativas do HTML5 que transformam a experiência web. Técnicas de otimização para carregamento mais rápido e menor consumo de recursos.</p>
+                <div class="advanced-concepts">
+                    <span>Web Storage (localStorage, sessionStorage)</span>
+                    <span>Geolocation API</span>
+                    <span>Elemento <code>&lt;canvas&gt;</code> e `SVG`</span>
+                    <span>Web Workers (Multithreading)</span>
+                    <span>Custom Elements (Introdução a <strong>Web Components</strong>)</span>
+                    <span>Otimização (`async`, `defer`)</span>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Este é um mapa de estudos sobre a linguagem HTML5. Conteúdo focado em boas práticas e padrões web.</p>
+        <p><a href="#">Recursos Adicionais</a> | <a href="#">Sobre o Projeto</a></p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

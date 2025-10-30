@@ -1,0 +1,272 @@
+/* ========================================= */
+/* 1. VARIÁVEIS CSS (IDENTITY)               */
+/* ========================================= */
+:root {
+    /* Cores Primárias: Azul marinho (foco) e Ciano/Turquesa (estímulo e clareza) */
+    --color-primary: #0077b6;         /* Azul Marinho (Base para cabeçalho e links) */
+    --color-secondary: #00b4d8;       /* Ciano/Turquesa (Acentos e botões de destaque) */
+    --color-accent: #fca311;          /* Laranja Vibrante (Destaques e progresso) */
+    
+    /* Cores Neutras e de Texto */
+    --color-background: #f8f9fa;      /* Fundo da página (Muito claro, quase branco) */
+    --color-surface: #ffffff;         /* Fundo de Módulos/Cards (Branco puro) */
+    --color-text-dark: #212529;       /* Texto principal (Preto quase absoluto) */
+    --color-text-light: #495057;      /* Texto secundário/Parágrafos */
+    --color-border: #e9ecef;          /* Bordas e divisores sutis */
+
+    /* Tipografia */
+    --font-sans: 'Arial', 'Helvetica', sans-serif;
+    --font-serif: 'Georgia', serif;
+    --font-heading: 'Roboto', var(--font-sans); /* Fonte para títulos */
+    --font-body: 'Open Sans', var(--font-sans);  /* Fonte para corpo do texto */
+    
+    /* Espaçamento (Modular Scale) */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+
+    /* Sombras Sutis */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Fallbacks para fontes web (idealmente, seriam importadas) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+
+/* ========================================= */
+/* 2. RESET BÁSICO E ESTILOS GLOBAIS         */
+/* ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    text-indent: 2.5em;
+    color: var(--color-text-dark);
+
+    background-color: var(--color-background);
+    min-height: 100vh;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-sm);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; color: var(--color-text-dark); }
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+ul, ol {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+/* ========================================= */
+/* 3. LAYOUT: CABEÇALHO E NAVEGAÇÃO          */
+/* ========================================= */
+.main-header {
+    background-color: var(--color-surface);
+    border-bottom: 3px solid var(--color-primary);
+    padding: var(--space-sm) var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+}
+
+.main-header .logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--color-primary);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--space-md);
+}
+
+.main-nav li{
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.main-nav a {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-color: var(--color-secondary);
+}
+
+/* ========================================= */
+/* 4. SEÇÕES E HERO                          */
+/* ========================================= */
+.hero {
+    background-color: var(--color-secondary);
+    color: var(--color-surface);
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    border-radius: 8px;
+}
+
+.hero h2 {
+    color: var(--color-surface);
+    font-size: 2.8rem;
+    margin-bottom: var(--space-sm);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+/* ========================================= */
+/* 5. MAPA DO CONHECIMENTO (MODULES)         */
+/* ========================================= */
+.knowledge-map h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    text-transform: uppercase;
+}
+
+.module {
+    background-color: var(--color-surface);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    border-left: 5px solid var(--color-primary); /* Indicador visual de módulo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.module h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
+}
+
+.module p {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-sm);
+}
+
+/* Estilos para as caixas de conceitos/tags */
+.tags, .key-concepts, .semantic-elements, .key-features, .advanced-concepts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+.tags span, .semantic-elements span, .advanced-concepts span, .key-concepts li, .key-features li {
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    font-weight: 600;
+}
+
+/* Destaque para Níveis Específicos (Customização de cores) */
+.stage-1 { border-left-color: #6c757d; } /* Cinza (Iniciante) */
+.stage-2 { border-left-color: #00b4d8; } /* Ciano (Intermediário) */
+.stage-3 { border-left-color: #fca311; } /* Laranja (Avançado) */
+.stage-4 { border-left-color: #0077b6; } /* Azul Marinho (Profissional) */
+
+
+/* ========================================= */
+/* 6. RODAPÉ                                 */
+/* ========================================= */
+.main-footer {
+    text-align: center;
+    padding: var(--space-lg) var(--space-sm);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin: 0.5rem 0;
+}
+
+.main-footer a {
+    color: var(--color-text-light);
+    text-decoration: underline;
+}
+
+/* ========================================= */
+/* 7. MEDIA QUERIES (Responsividade)         */
+/* ========================================= */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: var(--space-sm);
+    }
+    
+    .hero {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .module {
+        padding: var(--space-md);
+    }
+}

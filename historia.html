@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História e Evolução da Web | Jornada HTML5</title>
+    <link rel="stylesheet" href="styles/historia.css">
+</head>
+<body>
+    
+    <main class="story-main">
+        
+        <section id="inicio" class="story-hero">
+            <h2>A Linha do Tempo da Web: Uma Revolução Digital</h2>
+            <p>Embarque nesta jornada e descubra como a World Wide Web evoluiu de um projeto acadêmico simples para o ecossistema complexo e poderoso que conhecemos hoje.</p>
+            <div class="scroll-prompt">Role para começar a história &darr;</div>
+        </section>
+        
+        <main class="story-main">
+    
+    <section id="marcos" class="scrolly-container">
+        
+        <div class="story-pin">
+            <div class="story-graphic" aria-hidden="true">
+                <img src="./res/img/tim-berners-lee.webp" alt="Ilustração de Tim Berners-Lee">
+                <div class="graphic-label" id="graphic-label-1">O Nascimento da Web</div>
+            </div>
+        </div>
+        
+        <div class="story-steps-wrapper">
+            
+            <article class="story-step" data-year="1989">
+                <h3>1989: A Proposta no CERN</h3>
+                <p>O cientista britânico <strong>Tim Berners-Lee</strong> propôs um sistema de gerenciamento de informações baseado em hipertexto no CERN, inicialmente chamado "Mesh". Este foi o embrião da World Wide Web.</p>
+                
+                <div class="interaction-area" id="proposal-modal-area">
+                    <button id="view-proposal-btn" class="interactive-button">Ver Proposta Original (Simulação)</button>
+                    
+                    <div id="proposal-modal" class="web-modal hidden">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h4>"Information Management: A Proposal"</h4>
+                            <p>O foco inicial era sobre <strong>compartilhamento de informações</strong>, onde links (hipertexto) conectariam documentos por toda a rede. Era um sistema interno, mas que continha o conceito fundamental da World Wide Web: a <strong>ligação entre dados</strong>.</p>
+                            <p class="modal-source">Fonte: CERN (Simulada)</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="story-step" data-year="1991">
+                <h3>1991: HTML 1.0 e o Primeiro Site</h3>
+                <p>O HTML <em>(HyperText Markup Language)</em> nasce com apenas 18 elementos, focados estritamente na estruturação de documentos científicos. O primeiro site entra no ar.</p>
+                <p>Foco: <strong>Estrutura de Documentos</strong>.</p>
+            </article>
+            
+            <article class="story-step" data-year="1995">
+                <h3>1995: HTML 2.0, Browsers e Netscape</h3>
+                <p>A Web se populariza com o lançamento de browsers como o Netscape Navigator. O HTML 2.0 padroniza a linguagem. Neste período, o CSS começa a ser concebido para separar a <strong>Aparência da Estrutura</strong>.</p>
+                
+                <div class="interaction-area" id="css-puzzle">
+                    <h4>Simule a Guerra dos Browsers!</h4>
+                    <div class="puzzle-container">
+                        <div id="puzzle-header" class="puzzle-element">Header</div>
+                        <div id="puzzle-nav" class="puzzle-element">Nav</div>
+                        <div id="puzzle-main" class="puzzle-element">Main Content</div>
+                        <div id="puzzle-aside" class="puzzle-element">Sidebar</div>
+                    </div>
+                    <button id="activate-css-btn" class="interactive-button">Ativar o Poder do CSS</button>
+                    <p id="css-puzzle-message" class="puzzle-message hidden">Estrutura e aparência separadas! O CSS organiza o conteúdo.</p>
+                </div>
+            </article>
+
+            <article class="story-step" data-year="1999">
+                <h3>1999: HTML 4.01 e a Era XHTML</h3>
+                <p>O HTML 4.01 solidifica a estrutura. Em seguida, o <strong>XHTML</strong> (baseado em XML) surge, forçando regras de sintaxe mais estritas, buscando maior compatibilidade e rigor técnico.</p>
+                <p>Desafio: <strong>Sintaxe Rigorosa</strong>.</p>
+            </article>
+            
+            <div class="transition-point">
+                <h3>O Início da Crise: A Web estava estagnando.</h3>
+            </div>
+
+            <div id="era-html5" class="story-steps-wrapper modern-web">
+                
+                <article class="story-step" data-year="2004">
+                    <h3>2004: A Formação da WHATWG</h3>
+                    <p>Em resposta à estagnação do W3C (focado em XHTML 2.0), desenvolvedores de Apple, Mozilla e Opera formam o <strong>WHATWG</strong> (Web Hypertext Application Technology Working Group), focando em uma Web que funcionasse. Este é o nascimento do HTML5.</p>
+                    <p>Foco: <strong>Living Standard (Padrão Vivo)</strong>.</p>
+                </article>
+
+                <article class="story-step" data-year="2014">
+                    <h3>2014: HTML5 é Oficializado</h3>
+                    <p>Após anos de desenvolvimento, o HTML5 é formalmente publicado pelo <abbr title="World Wide Web Consortium. É a organização internacional que desenvolve os principais padrões e diretrizes para a web.">W3C</abbr>. Ele traz elementos <strong>semânticos</strong> (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>), suporte a <strong>multimídia nativa</strong> (<code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>) e inúmeras <strong>APIs</strong>. A Web nunca mais foi a mesma.</p>
+                    
+                    <div class="interaction-area" id="geolocation-area">
+                        <h4>Teste o poder do Geolocation API!</h4>
+                        
+                        <p id="geo-message">O HTML5 permite que a Web interaja com o mundo real. Clique para descobrir sua localização (Apenas coordenadas de simulação serão exibidas se você negar).</p>
+
+                        <button id="get-location-btn" class="interactive-button">Obter Minha Localização</button>
+                        
+                        <div id="geo-result" class="hidden">
+                            <p><strong>Status:</strong> <span id="geo-status">Aguardando...</span></p>
+                            <p><strong>Latitude:</strong> <span id="geo-lat">--</span></p>
+                            <p><strong>Longitude:</strong> <span id="geo-lon">--</span></p>
+                            <p class="geo-note">Suas coordenadas não são armazenadas.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="story-step" data-year="Hoje">
+                    <h3>O HTML de Hoje: Uma Plataforma Completa</h3>
+                    <p>O HTML5 evoluiu para uma plataforma de aplicação completa, integrada com CSS Grid/Flexbox e JavaScript ES6+. O foco é em <strong>Acessibilidade (ARIA)</strong> e na velocidade e desempenho (Web Workers).</p>
+                    <p>Visão: <strong>Performance e Acessibilidade</strong>.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="futuro" class="story-cta">
+            <h2>Onde Iremos Agora?</h2>
+            <p>Compreender a história do HTML é o primeiro passo para escrever o futuro da Web. Explore o Mapa do Conhecimento para iniciar seu domínio prático.</p>
+            <a href="index.html" class="button">Voltar ao Mapa Principal</a>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Conteúdo baseado na cronologia da World Wide Web.</p>
+    </footer>
+
+    <script src="js/menu.js" defer></script>
+    <script src="js/scroll-story.js" defer></script>
+    </body>
+</html>
