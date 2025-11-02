@@ -1,3 +1,16 @@
+@import url('menu.css');
+
+/* 
+320px menor tamanho de tela
+375px / 390px / 414px (Celulares maiores, como iPhones e Androids mais recentes)
+480px (Dispositivos pequenos em geral e a maioria dos telefones em orientação paisagem)
+640px (Ponto de transição comum antes de tablets)
+768px (A maioria dos tablets, em orientação retrato)
+992px (Desktops menores ou tablets em orientação paisagem)
+1200px (Desktops e telas largas)
+1400px ou superior (Telas muito largas)  
+*/
+
 /* ========================================= */
 /* 1. VARIÁVEIS CSS (IDENTITY)               */
 /* ========================================= */
@@ -20,12 +33,12 @@
     --font-heading: 'Roboto', var(--font-sans); /* Fonte para títulos */
     --font-body: 'Open Sans', var(--font-sans);  /* Fonte para corpo do texto */
     
-    /* Espaçamento (Modular Scale) */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 3rem;
-    --space-xl: 4rem;
+    /* Espaçamento (Modular Scale) - Ajustado para valores diretos para maior clareza */
+    --space-xs: 0.5rem; /* 8px */
+    --space-sm: 1rem;   /* 16px */
+    --space-md: 1.5rem; /* 24px */
+    --space-lg: 3rem;   /* 48px */
+    --space-xl: 4rem;   /* 64px */
 
     /* Sombras Sutis */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -37,28 +50,29 @@
 
 
 /* ========================================= */
-/* 2. RESET BÁSICO E ESTILOS GLOBAIS         */
+/* 2. RESET BÁSICO E ESTILOS GLOBAIS (MOBILE-FIRST DEFAULT) */
 /* ========================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+    box-sizing: border-box; 
 }
 
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    text-indent: 2.5em;
+    text-indent: 2.5em; /* Estilo de identação original mantido */
     color: var(--color-text-dark);
-
     background-color: var(--color-background);
     min-height: 100vh;
+    padding-top: 60px;
 }
 
+/* MAIN - Layout centralizado e padding para mobile */
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-md) var(--space-sm); /* Padding reduzido para mobile */
 }
 
 h1, h2, h3 {
@@ -69,8 +83,8 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; color: var(--color-text-dark); }
+h2 { font-size: 2rem; } /* Ajustado para 2rem no mobile (era 2.8rem no Hero) */
+h3 { font-size: 1.5rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
 
 a {
     color: var(--color-secondary);
@@ -89,60 +103,12 @@ ul, ol {
 }
 
 /* ========================================= */
-/* 3. LAYOUT: CABEÇALHO E NAVEGAÇÃO          */
-/* ========================================= */
-.main-header {
-    background-color: var(--color-surface);
-    border-bottom: 3px solid var(--color-primary);
-    padding: var(--space-sm) var(--space-lg);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100vw;
-}
-
-.main-header .logo h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: var(--color-primary);
-}
-
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: var(--space-md);
-}
-
-.main-nav li{
-    margin: 0;
-    border: none;
-    padding: 0;
-}
-
-.main-nav a {
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid transparent;
-}
-
-.main-nav a:hover {
-    color: var(--color-secondary);
-    text-decoration: none;
-    border-color: var(--color-secondary);
-}
-
-/* ========================================= */
-/* 4. SEÇÕES E HERO                          */
+/* 4. SEÇÕES E HERO (MOBILE DEFAULT)         */
 /* ========================================= */
 .hero {
     background-color: var(--color-secondary);
     color: var(--color-surface);
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-lg) var(--space-sm); /* Padding ajustado para mobile */
     text-align: center;
     margin-bottom: var(--space-lg);
     border-radius: 8px;
@@ -150,18 +116,18 @@ ul, ol {
 
 .hero h2 {
     color: var(--color-surface);
-    font-size: 2.8rem;
+    font-size: 2.2rem; /* Tamanho reduzido para mobile */
     margin-bottom: var(--space-sm);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Tamanho reduzido para mobile */
     opacity: 0.9;
 }
 
 
 /* ========================================= */
-/* 5. MAPA DO CONHECIMENTO (MODULES)         */
+/* 5. MAPA DO CONHECIMENTO (MODULES - MOBILE DEFAULT) */
 /* ========================================= */
 .knowledge-map h2 {
     text-align: center;
@@ -171,11 +137,11 @@ ul, ol {
 
 .module {
     background-color: var(--color-surface);
-    padding: var(--space-lg);
+    padding: var(--space-md); /* Padding ajustado para mobile */
     margin-bottom: var(--space-md);
     border-radius: 8px;
     box-shadow: var(--shadow-md);
-    border-left: 5px solid var(--color-primary); /* Indicador visual de módulo */
+    border-left: 5px solid var(--color-primary); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -195,6 +161,7 @@ ul, ol {
 .module p {
     color: var(--color-text-light);
     margin-bottom: var(--space-sm);
+    text-indent: 0; /* Remover indentação de parágrafo dentro de módulos para melhor leitura */
 }
 
 /* Estilos para as caixas de conceitos/tags */
@@ -223,7 +190,7 @@ ul, ol {
 
 
 /* ========================================= */
-/* 6. RODAPÉ                                 */
+/* 6. RODAPÉ (MOBILE DEFAULT)                */
 /* ========================================= */
 .main-footer {
     text-align: center;
@@ -244,29 +211,39 @@ ul, ol {
 }
 
 /* ========================================= */
-/* 7. MEDIA QUERIES (Responsividade)         */
+/* 7. MEDIA QUERIES (Desktop Overrides - min-width) */
 /* ========================================= */
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        text-align: center;
+@media (min-width: 901px) {
+    body {
+        padding-top: 70px; /* 70px é a altura do header desktop no menu.css */
     }
 
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: var(--space-sm);
+    /* MAIN */
+    main {
+        padding: var(--space-lg) var(--space-lg); /* Volta ao padding desktop */
     }
     
+    /* HERO */
     .hero {
-        padding: var(--space-lg) var(--space-sm);
+        padding: var(--space-xl) var(--space-lg); /* Volta ao padding desktop */
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2.8rem; /* Volta ao tamanho desktop original */
     }
-
-    .module {
-        padding: var(--space-md);
+    
+    .hero p {
+        font-size: 1.2rem; /* Volta ao tamanho desktop original */
     }
+    
+    /* MAPA DO CONHECIMENTO - Layout em Grid (Duas Colunas) */
+    .knowledge-map section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: var(--space-md); /* Espaçamento entre as colunas */
+        margin-top: var(--space-lg);
+    }
+    
+    /* Títulos e Parágrafos */
+    h2 { font-size: 2.5rem; } /* Tamanho de H2 no desktop */
 }

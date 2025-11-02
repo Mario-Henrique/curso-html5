@@ -1,12 +1,8 @@
-/*
- * styles/historia.css - CORREÇÃO COMPLETA PARA SCROLLYTELLING 100VH
- * Garante a fixação lateral e a imersão de tela cheia por etapa.
- */
-
- @import url("main.css");
+@import url("main.css");
  
 /* ========================================= */
-/* 1. HERO E PROMPT DE ROLAGEM               */
+/* 1. HERO E PROMPT DE ROLAGEM (MOBILE DEFAULT) */
+/* Aplicações básicas, ajustadas para telas menores */
 /* ========================================= */
 .story-main {
     padding: 0; 
@@ -21,11 +17,11 @@
     text-align: center;
     background-color: var(--color-background);
     color: var(--color-text-dark);
-    padding: var(--space-xl);
+    padding: var(--space-xl) var(--space-md); /* Ajuste de padding para mobile */
 }
 
 .story-hero h2 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reduzido para mobile */
     margin-bottom: var(--space-md);
 }
 
@@ -50,32 +46,38 @@
 
 
 /* ========================================= */
-/* 2. ESTRUTURA DO SCROLLYTELLING (CORRIGIDA)*/
+/* 2. ESTRUTURA DO SCROLLYTELLING (MOBILE DEFAULT) */
+/* Por padrão, é uma coluna fluida (sem sticky, sem 100vh). */
 /* ========================================= */
 .scrolly-container {
     display: flex;
+    flex-direction: column; /* MOBILE: Coluna */
     position: relative;
-    /* Remove a margem superior para que o pin possa fixar no topo do viewport */
     margin: 0; 
-    padding: 0 var(--space-sm);
+    padding: var(--space-lg) var(--space-sm); /* Padding de mobile */
+    max-width: 1000px; /* Limite de largura para legibilidade */
+    margin: 0 auto;
 }
 
-/* COLUNA 1: O elemento que ficará fixo (PIN) */
+/* O elemento de fixação (PIN) */
 .story-pin {
-    width: 40%; /* 40% para a visualização fixa */
-    position: sticky; /* Essencial para fixar */
-    top: 0; /* Fixa no topo da tela */
-    height: 100vh; /* Ocupa a altura total da viewport */
+    /* MOBILE: Bloqueio de fluxo normal */
+    max-width: 100%;
+    width: 100%;
+    position: relative; 
+    top: auto;
+    height: auto;
+    margin-right: 0;
     display: flex;
     align-items: center; 
-    justify-content: center; /* Centraliza horizontalmente */
-    padding: 0 2rem; /* Padding lateral */
+    justify-content: center;
+    padding: var(--space-md) 0; /* Padding vertical simples */
 }
 
 .story-graphic {
     position: relative; 
     width: 100%;
-    height: 90vh; 
+    height: 50vh; /* Altura reduzida para mobile */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,75 +85,78 @@
     padding: var(--space-md);
     background-color: var(--color-surface);
     border-radius: 12px; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 3px solid var(--color-secondary);
     background: linear-gradient(135deg, var(--color-surface) 90%, var(--color-background) 100%);
     overflow: hidden; 
+    margin-bottom: var(--space-md); /* Espaço entre gráfico e texto no mobile */
 }
 
 .story-graphic img {
     max-width: 90%;
     max-height: 80%;
     object-fit: contain;
-    filter: grayscale(100%); 
-    transition: filter 1s ease, transform 1s ease, opacity 0.5s ease;
+    filter: grayscale(0%); /* Colorido no mobile por padrão */
+    transition: none;
 }
 
 .graphic-label {
-    position: absolute; 
-    bottom: 5%;
-    opacity: 0; /* Inicialmente invisível */
-    font-size: 1.8rem;
+    position: relative; 
+    bottom: auto;
+    opacity: 1; /* Visível no mobile por padrão */
+    font-size: 1.2rem;
     color: var(--color-primary);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    text-shadow: none;
     font-weight: bold;
-    transition: opacity 0.5s ease;
+    margin-top: var(--space-sm);
+    transition: none;
 }
 
-/* COLUNA 2: O contêiner dos blocos de texto (steps) - A classe .story-steps-wrapper foi adicionada no HTML */
+/* O contêiner dos blocos de texto (steps) */
 .story-steps-wrapper {
-    width: 60%; /* 60% para o conteúdo da história */
-    padding-left: var(--space-lg);
-    border-left: 2px solid var(--color-border);
+    width: 100%; /* Ocupa a largura total no mobile */
+    padding-left: 0;
+    border-left: none; /* Sem linha do tempo no mobile */
 }
 
-/* Os blocos individuais da história: O CORAÇÃO DA MUDANÇA */
+/* Os blocos individuais da história */
 .story-step {
-    min-height: 100vh; /* FORÇA cada etapa a ocupar uma tela inteira */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza o conteúdo do texto verticalmente */
-    padding: var(--space-lg) 0;
-    opacity: 0.1; /* Inicialmente mais transparente */
-    transition: opacity 1s ease, transform 0.5s ease;
+    min-height: auto; /* Conteúdo flui naturalmente */
+    padding: var(--space-md) 0; /* Padding vertical simples */
+    opacity: 1; /* Totalmente visível no mobile */
+    transition: none;
     position: relative; 
 }
 
-/* Indicador de progresso na linha do tempo */
+/* Indicador de progresso na linha do tempo (Oculto no mobile) */
 .story-step::before {
     content: attr(data-year);
-    position: absolute;
-    left: calc(0px - var(--space-lg)); 
-    top: 50%; 
-    transform: translate(-50%, -50%);
+    display: inline-block; /* Opcional: Transforma em um badge antes do título */
+    position: relative; 
+    left: auto;
+    top: auto;
+    transform: none;
     background-color: var(--color-primary);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
     font-weight: 700;
-    box-shadow: var(--shadow-sm);
-    z-index: 10;
-    transition: all 0.5s ease;
+    margin-right: var(--space-sm);
+    box-shadow: none;
+    z-index: auto;
+    transition: none;
 }
 
 .story-step h3 {
     color: var(--color-secondary);
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reduzido para mobile */
+    display: inline; /* Para fluir com o badge do ano */
 }
 
 .story-step p {
     color: var(--color-text-light);
     margin-top: var(--space-sm);
+    text-indent: 0; /* Remove indentação de parágrafo no corpo da história */
 }
 
 .interactive-prompt {
@@ -159,35 +164,36 @@
     color: var(--color-accent);
     font-weight: 600;
     font-style: italic;
+    text-indent: 0;
 }
 
 
 /* ========================================= */
-/* 3. ESTADOS ATIVOS (Visuais Inimagináveis) */
+/* 3. ESTADOS ATIVOS (Sem efeito no mobile)  */
 /* ========================================= */
 .story-step.is-active {
     opacity: 1;
-    transform: scale(1); 
+    transform: none; 
 }
 
 .story-step.is-active::before {
     background-color: var(--color-accent); 
-    transform: translate(-50%, -50%) scale(1.1); 
+    transform: none; 
 }
 
 .story-graphic.is-active img {
     opacity: 1;
     filter: grayscale(0%); 
-    transform: scale(1); 
+    transform: none; 
 }
 
 .story-graphic.is-active .graphic-label {
-    opacity: 1; /* O rótulo aparece quando o gráfico está ativo */
+    opacity: 1;
 }
 
 
 /* ========================================= */
-/* 4. RODAPÉ E TRANSIÇÃO                     */
+/* 4. RODAPÉ E TRANSIÇÃO (MOBILE DEFAULT)    */
 /* ========================================= */
 .transition-point {
     width: 100%; 
@@ -226,7 +232,7 @@
     text-decoration: none;
 }
 
-/* Estilos para interação com a proposta do CERN */
+/* Estilos de Interação */
 .interactive-button {
     background-color: var(--color-accent);
     color: var(--color-surface);
@@ -243,10 +249,9 @@
     background-color: #e69100;
 }
 
-/* Estilos do Modal */
 .web-modal {
     position: fixed;
-    z-index: 1000; /* Alto z-index para ficar acima de tudo */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -269,7 +274,7 @@
     background-color: var(--color-surface);
     padding: 2rem;
     border-radius: 8px;
-    width: 80%;
+    width: 90%; /* Ajuste para mobile */
     max-width: 600px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -297,7 +302,6 @@
     padding-top: 0.5rem;
 }
 
-/* Estilos para interação com a guerra dos browsers*/
 .interaction-area {
     margin-top: 2rem;
     padding: 1.5rem;
@@ -317,20 +321,20 @@
     position: absolute;
     padding: 0.5rem;
     border: 1px solid var(--color-text-dark);
-    background-color: #ffcccc; /* Cor de "Desarrumado" */
+    background-color: #ffcccc;
     transition: all 1s ease-in-out;
     text-align: center;
     font-weight: bold;
     color: var(--color-text-dark);
 }
 
-/* Estado Inicial (Desarrumado - Posicionamento sem CSS) */
+/* Estado Inicial (Desarrumado) */
 #puzzle-header { top: 10px; left: 10px; width: 80%; z-index: 4; }
 #puzzle-nav { top: 50px; left: 150px; width: 40%; z-index: 3; }
 #puzzle-main { top: 90px; left: 30px; width: 70%; height: 100px; z-index: 2; }
 #puzzle-aside { top: 120px; left: 200px; width: 30%; z-index: 1; }
 
-/* Estado Ativo (Arrumado - Posicionamento com CSS moderno) */
+/* Estado Ativo (Arrumado) */
 .css-active #puzzle-header { 
     top: 0; left: 0; width: 100%; height: 40px; 
     background-color: var(--color-primary); color: white;
@@ -352,7 +356,6 @@
     display: none;
 }
 
-/* Estilos para interação do HTML5 em 2014 */
 #geo-result {
     margin-top: 1rem;
     padding: 1rem;
@@ -372,51 +375,112 @@
     margin-top: 0.5rem;
 }
 
+
 /* ========================================= */
-/* 5. MEDIA QUERY (Responsividade)           */
+/* 5. MEDIA QUERY (DESKTOP - min-width)      */
+/* Ativação do Scrollytelling e Layout de Duas Colunas */
 /* ========================================= */
-@media (max-width: 900px) {
+@media (min-width: 901px) {
+    
+    .story-hero h2 {
+        font-size: 3rem; /* Tamanho original do desktop */
+    }
+
+    /* Ativa o Layout de Duas Colunas */
     .scrolly-container {
-        flex-direction: column;
-        padding: var(--space-lg) var(--space-sm);
+        flex-direction: row;
+        padding: 0 var(--space-lg);
+        margin: 0;
     }
 
-    /* Desativa o layout de duas colunas e o sticky */
-    .story-pin, .story-steps-wrapper {
-        max-width: 100%;
-        width: 100%;
-        position: relative; 
-        height: auto;
+    /* Ativa o Efeito Sticky (Pin) */
+    .story-pin {
+        width: 40%; 
+        position: sticky;
+        top: 0;
+        height: 100vh;
         margin-right: 0;
+        padding: 0 2rem;
     }
-    
+
     .story-graphic {
-        position: relative;
-        margin-bottom: var(--space-md);
-        height: 50vh; /* Reduz a altura da imagem no mobile */
+        height: 90vh; /* Altura total da viewport menos margens */
+        margin-bottom: 0;
     }
 
+    .story-graphic img {
+        filter: grayscale(100%); /* Volta a ser cinza por padrão */
+        opacity: 1;
+        transform: none;
+        transition: filter 1s ease, transform 1s ease, opacity 0.5s ease;
+    }
+
+    .graphic-label {
+        position: absolute; 
+        bottom: 5%;
+        opacity: 0; /* Invisível por padrão no desktop */
+        font-size: 1.8rem;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        transition: opacity 0.5s ease;
+    }
+
+    /* Ocupa a outra coluna e adiciona a linha do tempo */
+    .story-steps-wrapper {
+        width: 60%; 
+        padding-left: var(--space-lg);
+        border-left: 2px solid var(--color-border);
+    }
+
+    /* Força cada etapa a ocupar uma tela inteira */
     .story-step {
-        min-height: auto; /* Permite que o conteúdo flua naturalmente */
-        padding: var(--space-md) 0;
-        border-left: none;
-        opacity: 1; /* Todos visíveis em telas menores */
+        min-height: 100vh;
+        /* Re-ativa a opacidade e transição de foco */
+        opacity: 0.1; 
+        transition: opacity 1s ease, transform 0.5s ease;
+        justify-content: center; /* Centraliza o conteúdo do texto verticalmente */
+    }
+
+    .story-step h3 {
+        display: block;
+        font-size: 1.8rem;
     }
     
-    .story-steps-wrapper {
-        padding-left: 0;
-        border-left: none;
-    }
-
-    .story-graphic img, .graphic-label {
-        opacity: 1;
-        filter: grayscale(0%);
-        transform: none;
-        position: relative;
-    }
-
-    /* Oculta o indicador de progresso lateral no mobile */
+    /* Re-ativa o indicador de ano flutuante (ponto da linha do tempo) */
     .story-step::before {
-        display: none;
+        content: attr(data-year);
+        display: block; 
+        position: absolute;
+        left: calc(0px - var(--space-lg)); 
+        top: 50%; 
+        transform: translate(-50%, -50%);
+        background-color: var(--color-primary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 700;
+        box-shadow: var(--shadow-sm);
+        z-index: 10;
+        transition: all 0.5s ease;
+    }
+
+    /* Re-ativa os ESTADOS ATIVOS do Scrollytelling */
+    .story-step.is-active {
+        opacity: 1;
+        transform: scale(1); 
+    }
+
+    .story-step.is-active::before {
+        background-color: var(--color-accent); 
+        transform: translate(-50%, -50%) scale(1.1); 
+    }
+
+    .story-graphic.is-active img {
+        opacity: 1;
+        filter: grayscale(0%); 
+        transform: scale(1); 
+    }
+
+    .story-graphic.is-active .graphic-label {
+        opacity: 1; 
     }
 }
