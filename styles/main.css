@@ -101,6 +101,11 @@ ul, ol {
     margin-bottom: var(--space-sm);
 }
 
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
 /* ========================================= */
 /* 4. SEÇÕES E HERO (MOBILE DEFAULT)         */
 /* ========================================= */
@@ -146,7 +151,9 @@ ul, ol {
 
 .module:hover {
     transform: translateY(-5px);
-    box-shadow: 3px 0 16px green;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 3px 0 16px green; */
+    border-left: 5px solid var(--color-accent); 
 }
 
 .module h3 {
@@ -184,7 +191,7 @@ ul, ol {
 /* Destaque para Níveis Específicos (Customização de cores) */
 .stage-1 { border-left-color: #6c757d; } /* Cinza (Iniciante) */
 .stage-2 { border-left-color: #00b4d8; } /* Ciano (Intermediário) */
-.stage-3 { border-left-color: #fca311; } /* Laranja (Avançado) */
+.stage-3 { border-left-color: #008000; } /* Verde (Avançado) */
 .stage-4 { border-left-color: #0077b6; } /* Azul Marinho (Profissional) */
 
 
