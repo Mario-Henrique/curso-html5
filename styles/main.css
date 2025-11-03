@@ -61,18 +61,17 @@
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    text-indent: 2.5em; /* Estilo de identação original mantido */
     color: var(--color-text-dark);
     background-color: var(--color-background);
     min-height: 100vh;
+    padding: var(--space-sm);
     padding-top: 60px;
 }
 
 /* MAIN - Layout centralizado e padding para mobile */
 main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-md) var(--space-sm); /* Padding reduzido para mobile */
+    margin: 60px auto;
 }
 
 h1, h2, h3 {
@@ -82,9 +81,9 @@ h1, h2, h3 {
     margin-bottom: var(--space-sm);
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; } /* Ajustado para 2rem no mobile (era 2.8rem no Hero) */
-h3 { font-size: 1.5rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
 
 a {
     color: var(--color-secondary);
@@ -108,7 +107,7 @@ ul, ol {
 .hero {
     background-color: var(--color-secondary);
     color: var(--color-surface);
-    padding: var(--space-lg) var(--space-sm); /* Padding ajustado para mobile */
+    padding: var(--space-md) var(--space-xs);
     text-align: center;
     margin-bottom: var(--space-lg);
     border-radius: 8px;
@@ -147,7 +146,7 @@ ul, ol {
 
 .module:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 3px 0 16px green;
 }
 
 .module h3 {
@@ -161,24 +160,24 @@ ul, ol {
 .module p {
     color: var(--color-text-light);
     margin-bottom: var(--space-sm);
-    text-indent: 0; /* Remover indentação de parágrafo dentro de módulos para melhor leitura */
 }
 
 /* Estilos para as caixas de conceitos/tags */
-.tags, .key-concepts, .semantic-elements, .key-features, .advanced-concepts {
+.key-concepts {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
     margin-top: var(--space-sm);
 }
 
-.tags span, .semantic-elements span, .advanced-concepts span, .key-concepts li, .key-features li {
+.key-concepts span, .key-concepts li{
     background-color: var(--color-background);
     color: var(--color-text-dark);
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
     border: 1px solid var(--color-border);
+    box-shadow: 2px 2px 6px rgb(221, 221, 221);
     font-weight: 600;
 }
 
@@ -245,5 +244,7 @@ ul, ol {
     }
     
     /* Títulos e Parágrafos */
-    h2 { font-size: 2.5rem; } /* Tamanho de H2 no desktop */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
 }

@@ -43,52 +43,52 @@
         </section>
         <section>
             <h1>Estrutura básica de um documento HTML</h1>
-        <pre class="code-block">
-        <code>
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="pt-br"&gt;
-               .
-               .
-               .
-            &lt;/html&gt;
-        </code>
-        </pre>
+<pre class="code-block">
+<code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+        .
+        .
+        .
+    &lt;/html&gt;
+</code>
+</pre>
             <p>Na primeira linha <samp>&lt;!DOCTYPE html&gt;</samp> é definido o tipo de documento que nesse caso é html.</p>
             <p>Já a segunda linha <samp>&lt;html lang="pt-br"&gt;</samp> é iniciada a tag <strong>html</strong> com o atributo que define a linguagem que essa página será escrita.</p>
             <p>Dentro das tags <strong>&lt;html&gt;</strong> e <strong>&lt;/html&gt;</strong> vamos usar mais duas que são essênciais, que são, <strong>&lt;head&gt;</strong> que indica o cabeçalho da página e onde são definidas algumas configurações do documento e <strong>&lt;body&gt;</strong> que é o corpo da página e onde estará todo seu conteúdo.</p>
             <p>E para definir visualmente o que está dentro de que, ou seja, quem faz parte de quem, usamos uma técnica chamada <strong>identação</strong>, que nada mais é do que afastar o texto da margem usando a tecla <strong>TAB</strong>. Isso ajuda a tornar mais legível e facíl de compreender o documento.</p>
             <p>Um documento sem identação ficaria dessa forma:</p>
-        <pre class="code-block">
-        <code>
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="pt-br"&gt;
-            &lt;head&gt;
+<pre class="code-block">
+<code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título do documento&lt;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code>
+</pre>
+            <p>Então adicionando a técnica, essas tags ficam assim:</p>
+<pre class="code-block">
+<code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+        &lt;head&gt;
             &lt;meta charset="UTF-8"&gt;
             &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
             &lt;title&gt;Título do documento&lt;/&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
             &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;
-        </code>
-        </pre>
-            <p>Então adicionando a técnica, essas tags ficam assim:</p>
-        <pre class="code-block">
-        <code>
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="pt-br"&gt;
-                &lt;head&gt;
-                    &lt;meta charset="UTF-8"&gt;
-                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                    &lt;title&gt;Título do documento&lt;/&gt;
-                &lt;/head&gt;
-                &lt;body&gt;
-                    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
-                &lt;/body&gt;
-            &lt;/html&gt;
-        </code>
-        </pre>
+        &lt;/body&gt;
+    &lt;/html&gt;
+</code>
+</pre>
             <p>
                 Visualmente você consegue perceber o que chamamos de <strong>agrupamento de tags</strong>, que nada mais é do que colocar uma tag dentro de outra. O agrupamento desempenha um papel vital em nossa página da web porque ajuda o desenvolvedor <em>(e os buscadores)</em> a segmentar o conteúdo, o que torna mais fácil de posicionar, estilizar ou manipular o documento.
             </p>
@@ -99,7 +99,7 @@
                     <p>O segundo meta possui dois atributos, <strong>name</strong> responsável por identificar o tipo de metadado e <strong>content</strong> que é o valor ou conteúdo do metadado.</p>
                     <p>Em html5 existem nomes padrão de metadados, alguns deles são:</p>
                     <ul>
-                        <li><strong>viewport</strong> - Indica o valor inicial do viewport <samp>(área visível da janela do navegador onde o conteúdo da página é exibido).</samp> É comum em sites responsivos, que são construidos para serem legíveis independente do dispositivo que o acesse. Seu conteúdo mais usado é: <strong>width=device-width, initial-scale=1.0</strong> que possuem dois atributos que são <strong>width</strong>: que define a largura do documento e tem o valor <strong>device-width</strong> que significa largura do dispositivo. O outro atributo <strong>initial-scale</strong>: representa o zoom inicial quando a página é carregada pela primeira vez. O valor <strong>1.0</strong> é o nível de zoom normal.</li>
+                        <li><strong>viewport</strong> - Indica o valor inicial do viewport <em>(área visível da janela do navegador onde o conteúdo da página é exibido).</em> É comum em sites responsivos, que são construidos para serem legíveis independente do dispositivo que o acesse. Seu conteúdo mais usado é: <strong>width=device-width, initial-scale=1.0</strong> que possuem dois atributos que são <strong>width</strong>: que define a largura do documento e tem o valor <strong>device-width</strong> que significa largura do dispositivo. O outro atributo <strong>initial-scale</strong>: representa o zoom inicial quando a página é carregada pela primeira vez. O valor <strong>1.0</strong> é o nível de zoom normal.</li>
                         <li><strong>application-name</strong> - Define o nome do aplicativo web em execução. Se a página não for um aplicativo web, este nome de metadados não deve ser usado.</li>
                         <li><strong>author</strong> - Define o nome do autor do documento.</li>
                         <li><strong>description</strong> - Contém um resumo curto e preciso do conteúdo da página.</li>

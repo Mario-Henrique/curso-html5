@@ -55,7 +55,7 @@
     position: relative;
     margin: 0; 
     padding: var(--space-lg) var(--space-sm); /* Padding de mobile */
-    max-width: 1000px; /* Limite de largura para legibilidade */
+    max-width: 100vw; /* Limite de largura para legibilidade */
     margin: 0 auto;
 }
 
@@ -121,11 +121,11 @@
 
 /* Os blocos individuais da história */
 .story-step {
-    min-height: auto; /* Conteúdo flui naturalmente */
+    min-height: 100vh;
     padding: var(--space-md) 0; /* Padding vertical simples */
     opacity: 1; /* Totalmente visível no mobile */
     transition: none;
-    position: relative; 
+    position: relative;
 }
 
 /* Indicador de progresso na linha do tempo (Oculto no mobile) */

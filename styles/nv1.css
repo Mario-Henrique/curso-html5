@@ -13,7 +13,7 @@
 /* Aplica um fundo de destaque para a seção de conteúdo principal */
 section {
     background-color: var(--color-surface);
-    padding: var(--space-xl);
+    padding: var(--space-sm);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: var(--space-xl);
@@ -23,11 +23,8 @@ section {
 /* ========================================= */
 /* 2. Títulos e Conteúdo Básico              */
 /* ========================================= */
-h1:nth-last-child(n+2) {
-    color: var(--color-primary); /* Principal para títulos principais */
-    font-size: 2.5rem;
+h1 {
     border-bottom: 3px solid var(--color-accent); /* Linha divisória vibrante */
-    padding-bottom: var(--space-sm);
     margin-bottom: var(--space-lg);
 }
 
@@ -39,6 +36,7 @@ strong {
 /* Para o texto do parágrafo */
 p {
     margin-bottom: var(--space-md);
+    text-indent: 1.5rem;
 }
 
 /* Destaque para termos técnicos importantes (em vez de usar <strong>) */
@@ -125,9 +123,8 @@ li strong {
 
 /* Listas aninhadas (Metadados dentro de Metadados) */
 ul ul {
-    margin-top: var(--space-md);
-    padding-left: var(--space-xl);
-    border-left: 2px dashed var(--color-text-light);
+    margin: 0;
+    padding: 1rem;
 }
 
 ul ul li {
@@ -138,7 +135,7 @@ ul ul li {
 /* 5. Acessibilidade e Responsividade        */
 /* ========================================= */
 
-@media (max-width: 768px) {
+@media (min-width: 901px) {
     body {
         padding: var(--space-md);
     }
@@ -148,6 +145,10 @@ ul ul li {
     }
     
     h1 {
-        font-size: 2rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    ul ul{
+        padding: 2rem;
     }
 }
