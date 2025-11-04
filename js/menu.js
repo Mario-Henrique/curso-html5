@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="index.html">Mapa Principal</a></li>
                     <li><a href="historia.html">História</a></li>
                     <li><a href="iniciante.html">Nível Iniciante</a></li>
-                    <li><a href="#intermediario">Nível Intermediário</a></li>
-                    <li><a href="#avancado">Nível Avançado</a></li>
-                    <li><a href="#pro">Nível Profissional</a></li>
+                    <li><a href="intermediario.html">Nível Intermediário</a></li>
+                    <li><a href="avancado.html">Nível Avançado</a></li>
+                    <li><a href="profissional.html">Nível Profissional</a></li>
                 </ul>
             </nav>
         </header>

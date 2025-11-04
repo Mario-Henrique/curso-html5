@@ -41,7 +41,7 @@
     --space-xl: 4rem;   /* 64px */
 
     /* Sombras Sutis */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -102,6 +102,7 @@ h1, h2, h3 {
     color: var(--color-primary);
     line-height: 1.2;
     margin-bottom: var(--space-sm);
+    text-align: center;
 }
 
 h1 { font-size: 2rem; }
@@ -336,6 +337,65 @@ code, samp {
 .stage-3 { border-left-color: #008000; } /* Verde (Avançado) */
 .stage-4 { border-left-color: #0077b6; } /* Azul Marinho (Profissional) */
 
+/* ========================================= */
+/* ELEMENTOS                                 */
+/* ========================================= */
+.card-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    justify-content: center;
+}
+
+.card{
+    position: relative;
+    padding: 1rem;
+
+    width: 300px;
+    height: 200px;
+
+    align-content: center;
+
+    border-radius: 6px;
+    box-shadow: var(--shadow-md);
+
+    cursor: pointer;
+    
+    strong{
+        color: var(--color-text-light);
+    }
+}
+
+.card[data-url]{
+    background-color: var(--color-secondary);
+}
+
+.card:hover{
+    box-shadow: 2px 4px 6px rgb(182, 182, 182);
+    font-size: 1.5rem;
+
+    h1{
+        font-size: 1.6rem;
+        color: var(--color-primary);
+    }
+}
+
+.card h1{
+    font-size: 1.5rem;
+    position: relative;
+    top: 15%;
+    color: var(--color-surface);
+}
+
+.card h2{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+
+    font-size: 9rem;
+    color: #00000011;
+}
 
 /* ========================================= */
 /* RODAPÉ (MOBILE DEFAULT)                   */
