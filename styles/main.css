@@ -12,7 +12,7 @@
 */
 
 /* ========================================= */
-/* 1. VARIÁVEIS CSS (IDENTITY)               */
+/* VARIÁVEIS CSS (IDENTITY)                  */
 /* ========================================= */
 :root {
     /* Cores Primárias: Azul marinho (foco) e Ciano/Turquesa (estímulo e clareza) */
@@ -50,7 +50,7 @@
 
 
 /* ========================================= */
-/* 2. RESET BÁSICO E ESTILOS GLOBAIS (MOBILE-FIRST DEFAULT) */
+/* RESET BÁSICO E ESTILOS GLOBAIS (MOBILE-FIRST DEFAULT) */
 /* ========================================= */
 * {
     margin: 0;
@@ -74,16 +74,9 @@ main {
     margin: 60px auto;
 }
 
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    color: var(--color-primary);
-    line-height: 1.2;
-    margin-bottom: var(--space-sm);
+section{
+    min-height: 100vh;
 }
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
 
 a {
     color: var(--color-secondary);
@@ -96,18 +89,166 @@ a:hover {
     text-decoration: underline;
 }
 
-ul, ol {
-    padding-left: var(--space-lg);
-    margin-bottom: var(--space-sm);
-}
-
 .space-between{
     display: flex;
     justify-content: space-between;
 }
 
 /* ========================================= */
-/* 4. SEÇÕES E HERO (MOBILE DEFAULT)         */
+/* Títulos e Conteúdo Básico                 */
+/* ========================================= */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
+
+strong {
+    color: var(--color-accent); /* Destaque */
+    font-weight: 700;
+}
+
+/* Para o texto do parágrafo */
+p {
+    margin-bottom: var(--space-md);
+    text-indent: 1.5rem;
+}
+
+/* Destaque para termos técnicos importantes (em vez de usar <strong>) */
+.acronym {
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+/* ========================================= */
+/* Listas                                    */
+/* ========================================= */
+
+/* Listas principais de tags (ul) */
+ul, ol {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+/* Estilo para os itens da lista */
+li {
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-sm);
+    border-left: 2px solid var(--color-border); /* Pequeno indicador visual */
+}
+
+/* Itens que são tags */
+li strong {
+    color: var(--color-primary); /* A tag em si é o foco (Azul) */
+    font-weight: 700;
+}
+
+/* Listas aninhadas (Metadados dentro de Metadados) */
+ul ul {
+    margin: 0;
+    padding: 1rem;
+}
+
+ul ul li {
+    border-left: none; /* Remove a borda para listas aninhadas */
+}
+
+/* ========================================= */
+/* Elementos de formulário                   */
+/* ========================================= */
+
+.button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    margin-top: var(--space-md);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e69100; 
+    text-decoration: none;
+}
+
+.interactive-button {
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.interactive-button:hover:not(:disabled) {
+    background-color: #e69100;
+}
+
+
+/* ========================================= */
+/* Estilização de Código e Tags              */
+/* ========================================= */
+
+/* Estilo para nomes de Tags e Sintaxe dentro do texto */
+code, samp {
+    background-color: #333; /* Fundo escuro */
+    color: #00ffc7; /* Cor de terminal/código (verde/ciano) */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.95em;
+}
+
+/* Bloco de Código - Estrutura Principal */
+.code-block {
+    background-color: #2a2a2a; /* Fundo mais escuro para o bloco */
+    color: #f8f8f2;
+    padding: var(--space-md);
+    border-radius: 8px;
+    overflow-x: auto; /* Garante rolagem horizontal para códigos longos */
+    margin: var(--space-md) 0;
+    border-left: 5px solid var(--color-secondary); /* Borda de destaque */
+}
+
+/* Estiliza o conteúdo dentro do <pre> */
+.code-block code {
+    background: none;
+    color: #f8f8f2;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    display: block; /* Garante que o code use toda a largura e respeite a indentação */
+}
+
+/* Destaque para um exemplo ou explicação dentro de um parágrafo */
+.exemplo {
+    display: block;
+    margin-top: var(--space-sm);
+    padding: 10px 15px;
+    background-color: #4a4a4a; /* Um cinza médio para o destaque */
+    border-radius: 4px;
+    border-left: 4px solid var(--color-accent);
+
+    color: #FFF;
+}
+
+.exemplo strong {
+    color: var(--color-accent);
+}
+
+/* ========================================= */
+/* SEÇÕES E HERO (MOBILE DEFAULT)            */
 /* ========================================= */
 .hero {
     background-color: var(--color-secondary);
@@ -116,6 +257,7 @@ ul, ol {
     text-align: center;
     margin-bottom: var(--space-lg);
     border-radius: 8px;
+    min-height: auto;
 }
 
 .hero h2 {
@@ -131,7 +273,7 @@ ul, ol {
 
 
 /* ========================================= */
-/* 5. MAPA DO CONHECIMENTO (MODULES - MOBILE DEFAULT) */
+/* MAPA DO CONHECIMENTO (MODULES - MOBILE DEFAULT) */
 /* ========================================= */
 .knowledge-map h2 {
     text-align: center;
@@ -196,7 +338,7 @@ ul, ol {
 
 
 /* ========================================= */
-/* 6. RODAPÉ (MOBILE DEFAULT)                */
+/* RODAPÉ (MOBILE DEFAULT)                   */
 /* ========================================= */
 .main-footer {
     text-align: center;
@@ -221,6 +363,7 @@ ul, ol {
 /* ========================================= */
 @media (min-width: 901px) {
     body {
+        padding: var(--space-md);
         padding-top: 70px; /* 70px é a altura do header desktop no menu.css */
     }
 
@@ -229,6 +372,10 @@ ul, ol {
         padding: var(--space-lg) var(--space-lg); /* Volta ao padding desktop */
     }
     
+    section {
+        padding: var(--space-lg);
+    }
+
     /* HERO */
     .hero {
         padding: var(--space-xl) var(--space-lg); /* Volta ao padding desktop */
@@ -251,7 +398,14 @@ ul, ol {
     }
     
     /* Títulos e Parágrafos */
-    h1 { font-size: 3rem; }
+    h1 { 
+        font-size: 3rem; 
+        margin-bottom: var(--space-lg);
+    }
     h2 { font-size: 2rem; }
     h3 { font-size: 1.5rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
+
+    ul ul {
+        padding: 2rem;
+    }
 }

@@ -1,7 +1,7 @@
 @import url("main.css");
  
 /* ========================================= */
-/* 1. HERO E PROMPT DE ROLAGEM (MOBILE DEFAULT) */
+/* HERO E PROMPT DE ROLAGEM (MOBILE DEFAULT) */
 /* Aplicações básicas, ajustadas para telas menores */
 /* ========================================= */
 .story-main {
@@ -46,7 +46,7 @@
 
 
 /* ========================================= */
-/* 2. ESTRUTURA DO SCROLLYTELLING (MOBILE DEFAULT) */
+/* ESTRUTURA DO SCROLLYTELLING (MOBILE DEFAULT) */
 /* Por padrão, é uma coluna fluida (sem sticky, sem 100vh). */
 /* ========================================= */
 .scrolly-container {
@@ -110,6 +110,7 @@
     font-weight: bold;
     margin-top: var(--space-sm);
     transition: none;
+    padding: 0 1rem;
 }
 
 /* O contêiner dos blocos de texto (steps) */
@@ -156,7 +157,6 @@
 .story-step p {
     color: var(--color-text-light);
     margin-top: var(--space-sm);
-    text-indent: 0; /* Remove indentação de parágrafo no corpo da história */
 }
 
 .interactive-prompt {
@@ -169,7 +169,7 @@
 
 
 /* ========================================= */
-/* 3. ESTADOS ATIVOS (Sem efeito no mobile)  */
+/* ESTADOS ATIVOS (Sem efeito no mobile)     */
 /* ========================================= */
 .story-step.is-active {
     opacity: 1;
@@ -191,9 +191,8 @@
     opacity: 1;
 }
 
-
 /* ========================================= */
-/* 4. RODAPÉ E TRANSIÇÃO (MOBILE DEFAULT)    */
+/* RODAPÉ E TRANSIÇÃO (MOBILE DEFAULT)       */
 /* ========================================= */
 .transition-point {
     width: 100%; 
@@ -213,40 +212,6 @@
 
 .story-cta h2 {
     color: var(--color-primary);
-}
-
-.button {
-    display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-surface);
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    margin-top: var(--space-md);
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #e69100; 
-    text-decoration: none;
-}
-
-/* Estilos de Interação */
-.interactive-button {
-    background-color: var(--color-accent);
-    color: var(--color-surface);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
-}
-
-.interactive-button:hover:not(:disabled) {
-    background-color: #e69100;
 }
 
 .web-modal {
@@ -377,7 +342,7 @@
 
 
 /* ========================================= */
-/* 5. MEDIA QUERY (DESKTOP - min-width)      */
+/* MEDIA QUERY (DESKTOP - min-width)         */
 /* Ativação do Scrollytelling e Layout de Duas Colunas */
 /* ========================================= */
 @media (min-width: 901px) {

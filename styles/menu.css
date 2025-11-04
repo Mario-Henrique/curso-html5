@@ -217,11 +217,35 @@
         color: var(--color-primary); /* Links voltam a ter a cor primária */
         text-transform: uppercase;
         text-wrap: nowrap;
+
+        position: relative; /* Define o ponto de referência para o sublinhado */
+        overflow: hidden; /* Oculta partes do sublinhado que podem sair */
+        text-decoration: none !important; /* Remove qualquer sublinhado padrão */
+        transition: color 0.3s ease;
     }
     
     .main-nav a:hover {
         color: var(--color-secondary);
         border-bottom: 2px solid var(--color-secondary);
         text-decoration: none;
+    }
+
+    .main-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px; /* Espessura do sublinhado */
+        background-color: var(--color-accent); /* A cor que você deseja que apareça */
+        
+        /* Configuração do Efeito de Crescimento */
+        transform-origin: left; /* Garante que o crescimento seja da esquerda */
+        transform: scaleX(0); /* Estado inicial: Largura zero (invisível) */
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transição suave */
+    }
+
+    .main-nav a:hover::after {
+        transform: scaleX(1); /* Estado final: Largura total (visível) */
     }
 }
