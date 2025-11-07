@@ -1,0 +1,5 @@
+@import url(main.css);
+
+.card[data-url]{
+    background-color: var(--color-avancado);
+}

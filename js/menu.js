@@ -3,10 +3,13 @@
  * Injeta dinamicamente o cabeçalho e menu de navegação, e adiciona a lógica de Menu Hambúrguer (Mobile-First).
  */
 
+const base_url = window.location.origin;
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Definição do HTML do Cabeçalho com o Botão Hambúrguer
     const headerHTML = `
-        <header class="main-header">
+    <header class="main-header">
+            <base href="${base_url}">
             <div class="logo">
                 <h1>Jornada HTML5</h1>
             </div>
@@ -19,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <ul>
                     <li><a href="index.html">Mapa Principal</a></li>
                     <li><a href="historia.html">História</a></li>
-                    <li><a href="iniciante.html">Nível Iniciante</a></li>
-                    <li><a href="intermediario.html">Nível Intermediário</a></li>
-                    <li><a href="avancado.html">Nível Avançado</a></li>
-                    <li><a href="profissional.html">Nível Profissional</a></li>
+                    <li><a href="iniciante/iniciante.html">Nível Iniciante</a></li>
+                    <li><a href="intermediario/intermediario.html">Nível Intermediário</a></li>
+                    <li><a href="avancado/avancado.html">Nível Avançado</a></li>
+                    <li><a href="profissional/profissional.html">Nível Profissional</a></li>
                 </ul>
             </nav>
-        </header>
+    </header>
     `;
 
     // 2. Injeção no topo do corpo do documento

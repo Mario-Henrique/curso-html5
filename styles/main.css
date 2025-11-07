@@ -1,4 +1,5 @@
 @import url('menu.css');
+@import url('styles.css');
 
 /* 
 320px menor tamanho de tela
@@ -43,6 +44,12 @@
     /* Sombras Sutis */
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Cores dos cartões de iniciante ao profissional */
+    --color-iniciante: #6c757d;
+    --color-intermediario: #00b4d8;
+    --color-avancado: #008000;
+    --color-profissional: #0077b6; 
 }
 
 /* Fallbacks para fontes web (idealmente, seriam importadas) */
@@ -332,10 +339,10 @@ code, samp {
 }
 
 /* Destaque para Níveis Específicos (Customização de cores) */
-.stage-1 { border-left-color: #6c757d; } /* Cinza (Iniciante) */
-.stage-2 { border-left-color: #00b4d8; } /* Ciano (Intermediário) */
-.stage-3 { border-left-color: #008000; } /* Verde (Avançado) */
-.stage-4 { border-left-color: #0077b6; } /* Azul Marinho (Profissional) */
+.stage-1 { border-left-color: var(--color-iniciante) }
+.stage-2 { border-left-color: var(--color-intermediario) }
+.stage-3 { border-left-color: var(--color-avancado) }
+.stage-4 { border-left-color: var(--color-profissional) }
 
 /* ========================================= */
 /* ELEMENTOS                                 */
@@ -367,17 +374,13 @@ code, samp {
     }
 }
 
-.card[data-url]{
-    background-color: var(--color-secondary);
-}
-
 .card:hover{
     box-shadow: 2px 4px 6px rgb(182, 182, 182);
     font-size: 1.5rem;
 
     h1{
         font-size: 1.6rem;
-        color: var(--color-primary);
+        color: var(--color-text-dark);
     }
 }
 
