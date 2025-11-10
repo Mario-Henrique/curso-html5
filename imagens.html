@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.: WorldScaleSD - Imagens e ícones :.</title>
+    <link rel="stylesheet" href="styles/iniciante.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Formatos de imagem</h1>
+
+            <p>Formato de imagem é o tipo de arquivo gráfico que o navegador é capaz de interpretar e exibir na página da web. Alguns formatos mais conhecidos são:</p>
+
+            <ul>
+                <li><strong>.jpg/.jpeg</strong> - Possui melhor compressão de dados, ou seja, é um tipo de arquivo menor comparado a outros tipos.</li>
+
+                <li><strong>.png</strong> - É um pouco maior mas permite fundo transparente.</li>
+
+                <li><strong>.gif</strong> - Possui transparência e animação porém pouca qualidade.
+                <img src="/home/darkmh/Imagens/Gif/melhor_versao.gif" alt="Melhor versão">
+                </li>
+
+                <li><strong>.svg</strong> - É uma imagem vetorial. Pode ser expandido para qualquer tamanho sem perder resolução.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Adicionando imagem com &lt;img&gt;</h1>
+
+            <p>A tag <strong>&lt;img&gt;</strong> permite adicionar imagens em sua página. Com ela você usa dois atributos muito importantes:</p>
+
+            <ul>
+                <li><strong>src</strong>: significa <em>source</em>. Define o caminho onde está a imagem.</li>
+
+                <li><strong>alt</strong>: É um texto alternativo utilizado por leitores de tela para acessibilidade por pessoas com deficiência visual.</li>
+            </ul>
+
+            <span class="exemplo">&lt;img src="caminho\arquivo.extensão" alt="Imagem de exemplo"&gt;</span>
+        </section>
+
+        <section>
+            <h1>Adicionar ícones Favicon</h1>
+
+            <p>Este é o ícone que aparece junto ao seu title na aba do navegador. Você pode adicionar esta linha em seu <strong>&lt;head&gt;</strong>.</p>
+
+            <p>Como o ícone é um recurso externo vamos usar a tag <strong>&lt;link&gt;</strong> com os atributos <strong>rel, href e type</strong>.</p>
+
+            <ul>
+                <li><strong>rel</strong> - Define a relação entre o documento atual e o recurso vinculado.
+                <ul>
+                    Valores comuns:
+                    <li><strong>stylesheet</strong>: Indica que o arquivo vinculado é uma folha de estilo, usado para aplicar estilos CSS a página.</li>
+
+                    <li><strong>icon</strong>: Especifica o ícone do site (favicon) que aparece na aba do navegador.</li>
+
+                    <li><strong>preload</strong>: Usado para carregar um recurso de forma prioritária, antes que o navegador precise dele.</li>
+
+                    <li><strong>prev</strong> ou <strong>next</strong>: Indicam a relação com a página anterior ou seguinte de uma série.</li>
+                </ul>
+                </li>
+
+                <li><strong>href</strong>: Especifica a URL <samp>(caminho)</samp> do recurso externo ao qual a página está sendo vinculada.</li>
+
+                <li><strong>type</strong>: Especifica o tipo de mídia do recurso vinculado. Para folhas de estilo CSS, o valor é <strong>text/css</strong>.</li>
+
+                <li><strong>media</strong>: Define o tipo de mídia ou dispositivo para o qual a folha de estilo é otimizada, permitindo aplicar estilos diferentes para telas, impressões, etc.
+                <ul>
+                    Valores comuns:
+                    <li><strong>screen</strong>: Para telas de computador.</li>
+                    <li><strong>print</strong>: Para impressão.</li>
+                    <li><strong>all</strong>: Aplica a todos os tipos de mídia.</li>
+                </ul>
+                </li>
+            </ul>
+
+            <p>Logo para adicionar o ícone usamos dessa forma:</p>
+            <span class="exemplo">&lt;link rel="shortcut icon" href="icone.ico" type="image/x-icon"&gt;</span>
+        </section>
+    </main>
+    
+    <script src="js/menu.js" defer></script>
+</body>
+</html>

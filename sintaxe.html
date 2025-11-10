@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.: WorldScaleSD - Iniciando com HTML :.</title>
-    <link rel="stylesheet" href="styles/sintaxe.css">
+    <title>.: WorldScaleSD - O que é HTML :.</title>
+    <link rel="stylesheet" href="styles/iniciante.css">
 </head>
 <body>
     <main>
         <section>
             <h1>HTML</h1>
             <p>É um acrônimo para <strong class="acronym">Hyper Text Markup Language</strong> e significa linguagem de marcação para hiper texto. Não é uma linguagem de programação mas sim uma linguagem de marcação.</p>
-            <p>Por ser uma linguagem de marcação o HTML usa essêncialmente marcações, que auxiliam o navegador a interpretar e renderizar seu conteúdo para o usuário, ou mais conhecido como <strong>Tags</strong>.</p>
+            <p>Por ser uma linguagem de marcação a HTML usa essêncialmente marcações, ou mais conhecido como <strong>Tags</strong>, que auxiliam o navegador a interpretar e renderizar seu conteúdo para o usuário.</p>
             <p>Você pode reconhecer as tags por estarem entre os sinais de <strong><</strong> <samp>(menor que)</samp> e <strong>></strong> <samp>(maior que)</samp>. A maior parte delas inicia <strong><></strong> e termina <strong>&lt;/&gt;</strong>. Mas nem todas tem o fechamento <strong>&lt;/&gt;</strong>.</p>
             <ul>
                 Exemplos de tag com fechamento:
@@ -34,13 +34,13 @@
                 <li><strong>&lt;br&gt;</strong> - Insere uma quebra de linha. É uma tag "vazia", usada para forçar uma nova linha sem iniciar um novo parágrafo.</li>
                 <li><strong>&lt;hr&gt;</strong> - Cria uma linha horizontal de separação.</li>
                 <li><strong>&lt;link&gt;</strong> - Define a relação entre o documento atual e um recurso externo, como uma folha de estilos CSS.</li>
-                <li><strong>&lt;img&gt;</strong> - Usada para exibir uma imagem. Precisa dos atributos <strong>src</strong> <em>(origem da imagem)</em> e <strong>alt</strong> <em>(texto alternativo)</em>.</li>
+                <li><strong>&lt;img&gt;</strong> - Usada para exibir uma imagem.</li>
                 <li><strong>&lt;input&gt;</strong> - Cria campos de entrada em formulários, como caixas de texto ou botões.</li>
             </ul>
         </section>
         
         <section>
-            <h1>Elementos HTML</h1>
+            <h2>Elementos HTML</h2>
             <p>
                 Um elemento é um bloco de construção de uma página web. Enquanto podemos dizer que existe a tag <strong>&lt;p&gt;</strong>, podemos chamar de elemento quando temos seu uso completo como em: <strong>&lt;p&gt;Este é um parágrafo.&lt;/p&gt;</strong>
                 <p>Neste caso o elemento é composto por:</p>
@@ -54,7 +54,7 @@
         </section>
 
         <section>
-            <h1>Estrutura de uma tag</h1>
+            <h2>Estrutura de uma tag</h2>
             <p>Como já vimos uma tag HTML marca e organiza o conteúdo de uma página web, informando ao navegador como formatar o texto e exibir elementos como títulos, parágrafos e imagens. Elas funcionam como "etiquetas" que delimitam o início e o fim de uma estrutura, sempre contidas entre os sinais de <em>menor que</em> <strong><</strong> e <em>maior que</em> <strong>></strong>.</p>
             <p>Algumas tags também possuem <strong>atributos</strong> que fornecem informações adicionais ou modificam o comportamento padrão do elemento. Todo atributo virá após o nome da tag e seu valor será definido após o sinal de igual.
                 <span class="exemplo">
@@ -64,7 +64,7 @@
         </section>
 
         <section>
-            <h1>Comentários</h1>
+            <h2>Comentários</h2>
             <p>São um recurso essencial, não para o usuário final, mas para o <strong>desenvolvedor</strong>. Eles são trechos de texto inseridos no código-fonte que são <strong>ignorados e não renderizados</strong> pelo navegador, servindo unicamente para fins de documentação interna, organização e depuração.</p>
             
             <ul style="list-style: none;">
@@ -84,7 +84,7 @@
         </section>
 
         <section>
-            <h1>Estrutura básica de um documento HTML</h1>
+            <h2>Estrutura básica de um documento HTML</h2>
 <pre class="code-block">
 <code>
     &lt;!DOCTYPE html&gt;
@@ -97,8 +97,8 @@
 </pre>
             <p>Na primeira linha <samp>&lt;!DOCTYPE html&gt;</samp> é definido o tipo de documento que nesse caso é html.</p>
             <p>Já a segunda linha <samp>&lt;html lang="pt-br"&gt;</samp> é iniciada a tag <strong>html</strong> com o atributo que define a linguagem que essa página será escrita.</p>
-            <p>Dentro das tags <strong>&lt;html&gt;</strong> e <strong>&lt;/html&gt;</strong> vamos usar mais duas que são essênciais, <strong>&lt;head&gt;</strong> que indica o cabeçalho da página e onde são definidas algumas configurações do documento e <strong>&lt;body&gt;</strong> que é o corpo da página e onde estará todo seu conteúdo visivel.</p>
-            <p>E para definir visualmente o que está dentro de que, ou seja, quem faz parte de quem, usamos uma técnica chamada <strong>indentação</strong>, que nada mais é do que afastar o texto da margem usando a tecla <strong>TAB</strong>. Isso ajuda a tornar mais legível e facíl de compreender o documento.</p>
+            <p>Entre as tags <strong>&lt;html&gt;</strong> e <strong>&lt;/html&gt;</strong> vamos usar mais duas que são essênciais, <strong>&lt;head&gt;</strong> que indica o cabeçalho da página e onde são definidas algumas configurações do documento e <strong>&lt;body&gt;</strong> que é o corpo da página e onde estará todo seu conteúdo visivel.</p>
+            <p>E para definir visualmente o que está dentro de que, ou seja, quem faz parte de quem, usamos uma técnica chamada <strong>indentação</strong>, que nada mais é do que afastar o texto da margem usando a tecla <strong>TAB</strong> ou usando a tecla de espaço. Isso ajuda a tornar mais legível e facíl de compreender o documento.</p>
             <p>Um documento sem indentação ficaria dessa forma:</p>
 <pre class="code-block">
 <code>
@@ -132,7 +132,7 @@
 </code>
 </pre>
             <p>
-                Visualmente você consegue perceber o que chamamos de <strong>agrupamento de tags</strong>, que nada mais é do que colocar uma tag dentro de outra. O agrupamento desempenha um papel vital em nossa página da web porque ajuda o desenvolvedor a segmentar o conteúdo, o que torna mais fácil de posicionar, estilizar ou manipular o documento.
+                Visualmente você consegue perceber o que chamamos de <strong>agrupamento de tags</strong>, que nada mais é do que colocar uma tag dentro de outra. O agrupamento desempenha um papel vital em nossa página da web porque ajuda o desenvolvedor <em>(e os buscadores)</em> a segmentar o conteúdo, o que torna mais fácil de posicionar, estilizar ou manipular o documento.
             </p>
             <p>Você consegue perceber que adicionamos mais do que apenas o <strong>&lt;head&gt;</strong> e <strong>&lt;body&gt;</strong>. Então vamos a explicação:</p>
             <ul>

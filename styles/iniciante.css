@@ -1,5 +1,13 @@
-@import url(main.css);
+@import url("main.css");
 
-.card[data-url]{
-    background-color: var(--color-iniciante);
+h1:not([data-mode = "null"]){
+    border-bottom: 3px solid var(--color-accent); /* Linha divisória vibrante */
+}
+
+section {
+    background-color: var(--color-surface);
+    padding: var(--space-sm);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--space-xl);
 }

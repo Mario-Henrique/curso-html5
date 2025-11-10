@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>.: WorldScaleSD - Textos, símbolos e emojis :.</title>
+    <link rel="stylesheet" href="styles/iniciante.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Trabalhando com textos, símbolos e emojis</h1>
+
+            <p>A HTML é a espinha dorsal da web. Sua principal função é estruturar o texto, dando significado a cada palavra. Nesta página, vamos explorar as ferramentas que o HTML5 oferece para organizar, formatar e dar semântica ao seu conteúdo.</p>
+
+            <section>
+                <h2>1. Elementos Estruturais Básicos</h2>
+                <article>
+                    <h3>Elementos de Cabeçalho (Títulos)</h3>
+                    <p>As tags de cabeçalho <i>(ou <strong>headings</strong>)</i> são usadas para criar títulos e subtítulos. Elas são vitais para a organização do conteúdo e para o <strong>SEO</strong> <i>(Search Engine Optimization)</i>.</p>
+
+                    <p>A HTML usa 6 níveis de títulos, do mais importante ao menos importante, ou mais comum quando um subtítulo está abaixo de outro:</p>
+                    
+                    <h1 data-mode="null">&lt;h1&gt; Título Principal da Página</h1>
+                    <p>Deve haver apenas um &lt;h1&gt; por página, representando o tema central.</p>
+                    
+                    <h2 data-mode="null">&lt;h2&gt; Título de Seção</h2>
+                    <p>Usado para subdividir o conteúdo do &lt;h1&gt;.</p>
+                    
+                    <h3 data-mode="null">&lt;h3&gt; Subtítulo de Seção</h3>
+                    <p>Usado para tópicos dentro do &lt;h2&gt;.</p>
+                    
+                    <h4>&lt;h4&gt; Título de Quarto Nível</h4>
+                    <h5>&lt;h5&gt; Título de Quinto Nível</h5>
+                    <h6>&lt;h6&gt; Título de Sexto Nível</h6>
+                </article>
+
+                <article>
+                    <h3>Parágrafos e Quebras de Linha</h3>
+                    
+                    <h4>&lt;p&gt; Parágrafo</h4>
+                    <p>A tag <strong>&lt;p&gt;</strong> é o elemento mais comum, usado para criar um bloco de texto. Os navegadores adicionam um pequeno espaço antes e depois de cada parágrafo automaticamente.</p>
+                    
+                    <h4>&lt;br&gt; Quebra de Linha</h4>
+                    <p>A tag <strong>&lt;br&gt;</strong> <i>(de <strong>break</strong>)</i> força uma <br> quebra de linha. É uma tag vazia <i>(não precisa de fechamento)</i> e deve ser usada apenas quando a quebra de linha é fundamental para o significado <i>(como em poemas ou endereços)</i>.</p>
+
+                    <h4>&lt;pre&gt; Texto Pré-formatado</h4>
+                    <p>A tag <strong>&lt;pre&gt;</strong> é usada para exibir texto exatamente como ele foi escrito no código-fonte, mantendo espaços e quebras de linha. É ideal para exibir código ou arte ASCII:</p>
+<pre>
+    <strong>Exemplo:</strong>
+        Isso não é
+         um parágrafo.
+    Os espaços são mantidos!
+</pre>
+                </article>
+            </section>
+
+            <section>
+                <h2>2. Elementos de Formatação e Ênfase</h2>
+                <p>Ao trabalhar com texto, é fundamental entender que o HTML5 não se preocupa apenas com a aparência <i>(que é papel do CSS)</i>, mas principalmente com o <strong>significado</strong> <i>(semântica)</i> do conteúdo. Usar a tag correta melhora a <strong>acessibilidade</strong> e a forma como robôs de busca e tecnologias assistivas <i>(como leitores de tela)</i> interpretam a página. Abaixo estão as tags de formatação de texto ativas, divididas por função.</p>
+
+                <article>
+                    <h3>Elementos Semânticos <i>(Ênfase e Significado)</i></h3>
+                    <p>Estes elementos indicam a importância ou o tipo de conteúdo para o navegador, indo além de uma simples mudança visual.</p>
+                    
+                    <table>
+                        <tr>
+                            <th>Elemento</th>
+                            <th class="hidden-mobile">Exemplo</th>
+                            <th>Função e Semântica</th>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;strong&gt;</code></td>
+                            <td class="hidden-mobile"><strong data-mode="null">Texto de Alta Importância</strong></td>
+                            <td>
+                                Indica que o conteúdo possui <strong>grande importância</strong>, urgência ou seriedade. É visualmente exibido em negrito. 
+                                <p class="hidden-desktop">Ex: <strong data-mode="null">Texto de Alta Importância</strong></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;em&gt;</code></td>
+                            <td class="hidden-mobile"><i>Ênfase Tônica</i></td>
+                            <td>
+                                Indica <strong>ênfase tônica</strong>, alterando o significado da frase <i>(como se fosse dito com mais ênfase na fala)</i>. É visualmente exibido em itálico.
+                                <p class="hidden-desktop">Ex: Você <em>precisa</em> estudar se quiser evoluir.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;mark&gt;</code></td>
+                            <td class="hidden-mobile"><mark>Texto Realçado</mark></td>
+                            <td>
+                                Usado para <strong>realçar ou marcar</strong> texto que é relevante no contexto atual, como resultados de busca ou passagens importantes.
+                                <p class="hidden-desktop">Ex: <mark>Texto realçado</mark></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;small&gt;</code></td>
+                            <td class="hidden-mobile"><small>Letras Miúdas</small></td>
+                            <td>
+                                Representa comentários laterais, letras miúdas ou <strong>direitos autorais</strong> <i>(conteúdo que é menos importante que o texto principal)</i>.
+                                <p class="hidden-desktop">Ex: <small>Letras miúdas</small></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;del&gt;</code></td>
+                            <td class="hidden-mobile"><del>Conteúdo Deletado</del></td>
+                            <td>
+                                Indica que o trecho de texto foi <strong>removido</strong> ou deletado do documento. <i>(Ex: R$ <del>99,00</del>)</i>.
+                                <p class="hidden-desktop">Ex: <del>Conteúdo deletado</del></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;ins&gt;</code></td>
+                            <td class="hidden-mobile"><ins>Conteúdo Inserido</ins></td>
+                            <td>
+                                Indica que o trecho de texto foi <strong>adicionado</strong> ou inserido no documento. <i>(Ex: R$ 49,00 <ins>HOJE!</ins>)</i>.
+                                <p class="hidden-desktop">Ex: <ins>Conteúdo inserido</ins></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;s&gt;</code></td>
+                            <td class="hidden-mobile"><s>Conteúdo Incorreto</s></td>
+                            <td>
+                                Indica que o conteúdo <strong>não é mais preciso ou relevante</strong>, mas não deve ser deletado. <i>(Ex: um produto fora de estoque)</i>.
+                                <p class="hidden-desktop">Ex: <s>Conteúdo incorreto</s></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;dfn&gt;</code></td>
+                            <td class="hidden-mobile"><dfn>Termo Definido</dfn></td>
+                            <td>
+                                Usado para indicar uma <strong>definição</strong> ou a ocorrência de um termo que está sendo definido no conteúdo circundante.
+                                <p class="hidden-desktop">Ex: <dfn>Termo definido</dfn></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;abbr&gt;</code></td>
+                            <td class="hidden-mobile"><abbr title="HyperText Markup Language">HTML</abbr></td>
+                            <td>
+                                Representa uma <strong>abreviação</strong> ou acrônimo. O uso do atributo <code>title</code> é uma boa prática para dar o significado completo.
+                                <p class="hidden-desktop">Ex: <abbr title="HyperText Markup Language">HTML</abbr></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;summary&gt;</code></td>
+                            <td class="hidden-mobile text-center">
+                                -
+                            </td>
+                            <td>
+                               O elemento HTML <em>&lt;summary&gt;</em> é utilizado como um sumário ou legenda para o conteúdo de um elemento <strong>&lt;details&gt;</strong>.
+                                <br>
+                                <strong><small>Nota: Se o elemento &lt;summary&gt; for omitido, o cabeçalho "details" será utilizado.</small></strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;details&gt;</code></td>
+                            <td class="hidden-mobile">
+                                <details>
+                                    <summary>Alguns detalhes</summary>
+                                    <p>Mais informações sobre os detalhes.</p>
+                                </details>
+                            </td>
+                            <td>
+                                O elemento HTML <em>&lt;details&gt;</em> é usado como uma ferramenta de onde o usuário irá obter informações adicionais.
+                                
+<pre class="code-block hidden-mobile">
+    <code>
+        &lt;details&gt;
+            &lt;summary&gt;Alguns detalhes&lt;/summary&gt;
+            &lt;p&gt;Mais informações sobre os detalhes.&lt;/p&gt;
+        &lt;/details&gt;
+    </code>
+</pre>
+                                <p class="hidden-desktop">
+                                    Ex: <details class="hidden-desktop">
+                                            <summary>Alguns detalhes</summary>
+                                            <p>Mais informações sobre os detalhes.</p>
+                                        </details>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+
+                <article>
+                    <h3>Elementos Não Semânticos <i>(Apenas Formatação Visual)</i></h3>
+                    <p>Estes elementos são usados principalmente para aplicar um estilo visual sem adicionar um significado estrutural ou de importância ao texto. No entanto, eles têm usos específicos e não estão depreciados, o que significa que ainda podem ser utilizados com o HTML5.</p>
+
+                    <table>
+                        <tr>
+                            <th>Elemento</th>
+                            <th class="hidden-mobile">Exemplo</th>
+                            <th>Função e Uso Recomendado</th>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;b&gt;</code></td>
+                            <td class="hidden-mobile"><b>Texto em Destaque</b></td>
+                            <td>
+                                Usado para chamar a <strong>atenção</strong> do usuário, sem transmitir importância extra <i>(ex: nomes de produtos ou palavras em um resumo)</i>. Se for importante, use <code>&lt;strong&gt;</code>.
+                                <p class="hidden-desktop">Ex: <b>Texto em destaque</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;i&gt;</code></td>
+                            <td class="hidden-mobile"><i>Voz Alternativa</i></td>
+                            <td>
+                                Usado para texto com uma <strong>voz ou humor diferente</strong>, como termos técnicos, pensamentos ou o nome de uma espécie. Se for ênfase tônica, use <code>&lt;em&gt;</code>.
+                                <p class="hidden-desktop">Ex: <i>Voz alternativa</i></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;u&gt;</code></td>
+                            <td class="hidden-mobile"><u>Texto Sublinhado</u></td>
+                            <td>
+                                Usado para sublinhar texto que possui uma <strong>anotação não textual</strong>, como uma marcação de erro ortográfico. É altamente desaconselhado para ênfase, pois pode confundir o usuário com um link.
+                                <p class="hidden-desktop">Ex: <u>Texto sublinhado</u></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;span&gt;</code></td>
+                            <td class="hidden-mobile"><span>Contêiner Genérico</span></td>
+                            <td>
+                                É um <strong>contêiner genérico em linha</strong> usado para agrupar pequenos trechos de texto, permitindo que o CSS ou JavaScript o estilize ou manipule. Não adiciona nenhuma semântica por si só.
+                                <p class="hidden-desktop">Ex: <span>Container genérico</span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;sub&gt;</code></td>
+                            <td class="hidden-mobile">H<sub>2</sub>O <i>(Subscrito)</i></td>
+                            <td>
+                                Usado para exibir texto como <strong>subscrito</strong>, como em fórmulas químicas ou notações matemáticas.
+                                <p class="hidden-desktop">Ex: H<sub>2</sub>O <i>(Subscrito)</i></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;sup&gt;</code></td>
+                            <td class="hidden-mobile">2<sup>2</sup> <i>(Sobrescrito)</i></td>
+                            <td>
+                                Usado para exibir texto como <strong>sobrescrito</strong>, como em expoentes ou notas de rodapé.
+                                <p class="hidden-desktop">Ex: 2<sup>2</sup> <i>(Sobrescrito)</i></p>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+
+                <p>Uma lista com todos os elementos pode ser encontrada no <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements" target="_blank">MDN <i>(Mozilla Developer Network)</i></a> agora conhecida como MDN Web Docs. É um repositório online de documentação e um recurso de aprendizado para tecnologias da web como HTML, CSS e JavaScript.</p>
+            </section>
+            
+            <section>
+                <h2>3. Elementos de Citação e Código</h2>
+                <p>Usados para indicar que o texto tem uma fonte externa ou que representa um tipo específico de conteúdo técnico.</p>
+
+                <article>
+                    <h3>Citações</h3>
+                    <p>A tag <strong>&lt;blockquote&gt;</strong> é usada para citações longas que ocupam um parágrafo inteiro ou mais, geralmente retiradas de outra fonte.</p>
+                    <blockquote>
+                        "O HTML5 trouxe um conjunto de tags semânticas que revolucionaram a estruturação da informação na Web, tornando-a mais acessível e compreensível."
+                        <cite>- Um Web Designer</cite>
+                    </blockquote>
+                    <br>
+                    <p>A tag <strong>&lt;q&gt;</strong> é usada para <q>citações curtas</q> que ficam dentro de um parágrafo normal. Já a tag <strong>&lt;cite&gt;</strong> é usada para o <cite>título da obra</cite> de onde a citação foi tirada, como visto no exemplo do blockquote acima ao citar <i>Um Web Designer</i> como alguém que comentou sobre o HTML5.</p>
+                </article>
+
+                <article>
+                    <h3>Conteúdo Técnico</h3>
+                    <ul>
+                        <li><strong>&lt;code&gt; Código:</strong> Usado para exibir trechos de <code>código de programação</code>.</li>
+                        <li><strong>&lt;kbd&gt; Entrada de Teclado:</strong> Representa uma <kbd>entrada do usuário pelo teclado</kbd> ou voz (ex: "Pressione <kbd>Ctrl</kbd> + <kbd>C</kbd>").</li>
+                        <li><strong>&lt;samp&gt; Saída de Programa:</strong> Representa uma <samp>saída ou resultado</samp> de um programa de computador.</li>
+                        <li><strong>&lt;var&gt; Variável:</strong> Indica uma <var>variável</var> em um contexto matemático ou de programação.</li>
+                    </ul>
+                </article>
+            </section>
+        </section>
+        
+        <section>
+            <h2>4. Símbolos Especiais e Emojis: O Poder do Unicode</h2>
+            <p>Símbolos especiais e emojis são, na essência, caracteres. O HTML lida com eles de duas maneiras principais: através das <strong>Entidades de Caracteres</strong> e do <strong>Padrão Unicode</strong>, dependendo de como você deseja inseri-los.</p>
+            
+            <article>
+                <h3>Entidades de Caracteres (Símbolos HTML)</h3>
+                <p>Entidades de Caracteres são códigos que você usa no HTML para exibir: 
+                    <p><b>1)</b> caracteres reservados que têm um significado especial no HTML <i>(como os sinais de menor e maior que delimitam as tags)</i>; ou</p> 
+                    <p><b>2)</b> caracteres que não estão disponíveis no teclado padrão <i>(como frações ou moedas)</i>.</p>
+                </p>
+                <p>Elas são sempre iniciadas por um <strong>E comercial</strong> <i>(<code>&amp;</code>)</i> e terminadas por um <strong>ponto e vírgula</strong> <i>(<code>;</code>)</i>. Existem duas formas de usar a entidade: <strong>Nomeada</strong> <i>(com um nome fácil de lembrar)</i> ou <strong>Numérica</strong> <i>(com o número do caractere)</i>.</p>
+
+                <h4>Exemplos de Entidades Essenciais</h4>
+                <table>
+                    <tr>
+                        <th>Nome da Entidade</th>
+                        <th>Código Numérico</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;lt;</code></td>
+                        <td><code>&amp;#60;</code></td>
+                        <td>&lt; (Sinal de Menor)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;gt;</code></td>
+                        <td><code>&amp;#62;</code></td>
+                        <td>&gt; (Sinal de Maior)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;amp;</code></td>
+                        <td><code>&amp;#38;</code></td>
+                        <td>&amp; (E Comercial)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;copy;</code></td>
+                        <td><code>&amp;#169;</code></td>
+                        <td>&copy; (Direitos Autorais)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;trade;</code></td>
+                        <td><code>&amp;#8482;</code></td>
+                        <td>&trade; (Marca Registrada)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;nbsp;</code></td>
+                        <td><code>&amp;#160;</code></td>
+                        <td>(Espaço Não Quebrável)*</td>
+                    </tr>
+                </table>
+                <strong><small>* O <code>&amp;nbsp;</code> é crucial para inserir múltiplos espaços em branco, já que o HTML ignora espaços extras.</small></strong>
+            </article>
+
+            <article>
+                <h3>Emojis e Caracteres Unicode Complexos</h3>
+                <p>Emojis não são mais do que caracteres de texto complexos definidos pelo padrão <strong>Unicode</strong>. Para que eles funcionem corretamente, é obrigatório que o cabeçalho do seu HTML contenha <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>, pois o UTF-8 é o único conjunto de caracteres capaz de codificar a vasta gama de símbolos e emojis modernos.</p>
+                <p>Você pode inserir emojis de duas maneiras:</p>
+                <ol>
+                    <li><strong>Colando o Emoji Diretamente:</strong> É a forma mais fácil e mais comum hoje, desde que seu arquivo HTML esteja em UTF-8.</li>
+                    <li><strong>Usando o Código Numérico:</strong> É o método mais confiável, pois usa o número do Unicode <i>(geralmente em formato decimal ou hexadecimal)</i> para chamar o caractere.</li>
+                </ol>
+
+                <h4>Exemplos de Emojis Usando Código Numérico</h4>
+                <p>Geralmente usamos a notação hexadecimal do Unicode (<code>&amp;#x[HEX];</code>) ou decimal (<code>&amp;#[DEC];</code>) para garantir a exibição, embora colar o emoji diretamente seja o mais prático.</p>
+                <table>
+                    <tr>
+                        <th>Código Numérico (Hexadecimal)</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;#x1F600;</code></td>
+                        <td>&#x1F600; (Rosto Sorrindo)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;#x1F44D;</code></td>
+                        <td>&#x1F44D; (Polegar para Cima)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;#x2764;</code></td>
+                        <td>&#x2764; (Coração)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;#x1F525;</code></td>
+                        <td>&#x1F525; (Fogo)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;#x1F31F;</code></td>
+                        <td>&#x1F31F; (Estrela Brilhante)</td>
+                    </tr>
+                </table>
+
+                <br>
+                <p>Você pode pesquisar por mais símbolos ou emojis na internet. Nesse site também tem uma lista com outros recursos que você pode usar: <a href="https://www.w3schools.com/charsets/ref_emoji.asp" target="_blank">W3Schools</a></p>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/menu.js" defer></script>
+</body>
+</html>

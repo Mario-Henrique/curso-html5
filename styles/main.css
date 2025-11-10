@@ -85,6 +85,10 @@ section{
     min-height: 100vh;
 }
 
+article{
+    margin: 1em 0;
+}
+
 a {
     color: var(--color-secondary);
     text-decoration: none;
@@ -104,19 +108,18 @@ a:hover {
 /* ========================================= */
 /* Títulos e Conteúdo Básico                 */
 /* ========================================= */
-h1, h2, h3 {
+h1:not([data-mode = "null"]), h2:not([data-mode = "null"]), h3:not([data-mode = "null"]) {
     font-family: var(--font-heading);
     color: var(--color-primary);
     line-height: 1.2;
     margin-bottom: var(--space-sm);
-    text-align: center;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
+h1:not([data-mode="null"]) { font-size: 2rem; text-align: center;}
+h2:not([data-mode="null"]) { font-size: 1.5rem; }
+h3:not([data-mode="null"]) { font-size: 1rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
 
-strong {
+strong:not([data-mode = "null"]) {
     color: var(--color-accent); /* Destaque */
     font-weight: 700;
 }
@@ -125,6 +128,14 @@ strong {
 p {
     margin-bottom: var(--space-md);
     text-indent: 1.5rem;
+}
+
+.hidden-mobile{
+    display: none;
+}
+
+.hidden-desktop{
+    display: block;
 }
 
 /* Destaque para termos técnicos importantes (em vez de usar <strong>) */
@@ -151,7 +162,7 @@ li {
 }
 
 /* Itens que são tags */
-li strong {
+li strong:not([data-mode = "null"]) {
     color: var(--color-primary); /* A tag em si é o foco (Azul) */
     font-weight: 700;
 }
@@ -268,7 +279,7 @@ code, samp {
     min-height: auto;
 }
 
-.hero h2 {
+.hero h2:not([data-mode="null"]) {
     color: var(--color-surface);
     font-size: 2.2rem; /* Tamanho reduzido para mobile */
     margin-bottom: var(--space-sm);
@@ -283,7 +294,7 @@ code, samp {
 /* ========================================= */
 /* MAPA DO CONHECIMENTO (MODULES - MOBILE DEFAULT) */
 /* ========================================= */
-.knowledge-map h2 {
+.knowledge-map h2:not([data-mode="null"]) {
     text-align: center;
     margin-bottom: var(--space-xl);
     text-transform: uppercase;
@@ -306,7 +317,7 @@ code, samp {
     border-left: 5px solid var(--color-accent); 
 }
 
-.module h3 {
+.module h3:not([data-mode="null"]) {
     margin-top: 0;
     color: var(--color-primary);
     border-bottom: 1px solid var(--color-border);
@@ -374,7 +385,7 @@ code, samp {
     }
 }
 
-.card:hover{
+.card:hover:not([data-mode="null"]){
     box-shadow: 2px 4px 6px rgb(182, 182, 182);
     font-size: 1.5rem;
 
@@ -384,20 +395,98 @@ code, samp {
     }
 }
 
-.card h1{
+.card[data-url][data-mode="iniciante"]{
+    background-color: var(--color-iniciante);
+}
+
+.card[data-url][data-mode="intermediario"]{
+    background-color: var(--color-intermediario);
+}
+
+.card[data-url][data-mode="avancado"]{
+    background-color: var(--color-avancado);
+}
+
+.card[data-url][data-mode="profissional"]{
+    background-color: var(--color-profissional);
+}
+
+.card h1:not([data-mode="null"]){
     font-size: 1.5rem;
     position: relative;
     top: 15%;
     color: var(--color-surface);
 }
 
-.card h2{
+.card h2:not([data-mode="null"]){
     position: absolute;
     top: 10%;
     left: 35%;
 
     font-size: 9rem;
     color: #00000011;
+}
+
+/* ========================================= */
+/* TABELAS (Estrutura de Dados)           */
+/* ========================================= */
+
+table {
+    /* Garante que a tabela use toda a largura disponível */
+    width: 100%;
+    /* Remove o espaço duplo entre as bordas das células */
+    border-collapse: collapse; 
+    margin: var(--space-md) 0; /* Espaçamento vertical */
+    border: 1px solid var(--color-border); /* Borda externa suave */
+    box-shadow: var(--shadow-sm); /* Sombra sutil, harmonizando com os cards */
+    text-align: left; /* Alinhamento padrão do texto */
+}
+
+/* -------------------------------------- */
+/* Cabeçalho (<th>) - Destaque com cor primária */
+/* -------------------------------------- */
+th {
+    background-color: var(--color-primary); /* Azul Marinho para o fundo do cabeçalho */
+    color: var(--color-surface); /* Texto branco */
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.80rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none; /* Remove bordas internas no cabeçalho */
+    /* Adiciona um toque da cor de destaque */
+    border-bottom: 3px solid var(--color-accent); 
+}
+
+/* -------------------------------------- */
+/* Células de Dados (<td>) */
+/* -------------------------------------- */
+td {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border); /* Linhas de grade suaves */
+    vertical-align: top;
+    font-size: 0.70rem;
+    color: var(--color-text-dark);
+}
+
+/* -------------------------------------- */
+/* Efeito Zebrado (Striping) - Leitura fácil */
+/* -------------------------------------- */
+tr:nth-child(even) {
+    /* Linhas pares têm um fundo levemente cinza, harmonizando com o background da página */
+    background-color: var(--color-background); 
+}
+
+/* Remove a cor de fundo do cabeçalho nas linhas pares para evitar conflito */
+th:nth-child(even) {
+    background-color: var(--color-primary);
+}
+
+/* Adiciona um efeito sutil ao passar o mouse */
+tr:hover {
+    background-color: #e0f7fa; /* Um ciano muito claro, usando a cor secundária */
+}
+tr:hover td {
+    color: var(--color-primary); /* O texto fica em azul marinho ao passar o mouse */
 }
 
 /* ========================================= */
@@ -439,12 +528,20 @@ code, samp {
         padding: var(--space-lg);
     }
 
+    .hidden-mobile{
+        display: table-cell;
+    }
+
+    .hidden-desktop{
+        display: none;
+    }
+
     /* HERO */
     .hero {
         padding: var(--space-xl) var(--space-lg); /* Volta ao padding desktop */
     }
 
-    .hero h2 {
+    .hero h2:not([data-mode="null"]) {
         font-size: 2.8rem; /* Volta ao tamanho desktop original */
     }
     
@@ -461,14 +558,22 @@ code, samp {
     }
     
     /* Títulos e Parágrafos */
-    h1 { 
+    h1:not([data-mode = "null"]) { 
         font-size: 3rem; 
         margin-bottom: var(--space-lg);
     }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
+    h2:not([data-mode = "null"]) { font-size: 2rem; }
+    h3:not([data-mode = "null"]) { font-size: 1.5rem; color: var(--color-text-dark); } /* H3 não tem cor primária */
 
     ul ul {
         padding: 2rem;
+    }
+
+    table{
+        font-size: 1rem;
+    }
+
+    td{
+        font-size: 1rem;
     }
 }
